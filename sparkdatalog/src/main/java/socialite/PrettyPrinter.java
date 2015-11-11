@@ -8,6 +8,7 @@ public class PrettyPrinter
   //You may wish to change the parentheses used in precedence.
   private static final String _L_PAREN = new String("(");
   private static final String _R_PAREN = new String(")");
+  private static boolean renderingStringLiteral = false;
   //You may wish to change render
   private static void render(String s)
   {
@@ -43,7 +44,7 @@ public class PrettyPrinter
        buf_.append(s);
        buf_.append(" ");
     }
-    else if (s.equals(";"))
+    else if (s.equals(";") || s.equals("."))
     {
        backup();
        buf_.append(s);
@@ -51,6 +52,19 @@ public class PrettyPrinter
        indent();
     }
     else if (s.equals("")) return;
+    else if (s.equals("?"))
+    {
+       buf_.append(s);
+    }
+    else if (s.equals("'"))
+    {
+      if (renderingStringLiteral)
+      {
+        backup();
+      }
+      renderingStringLiteral = !renderingStringLiteral;
+      buf_.append(s);
+    }
     else
     {
        buf_.append(s);
@@ -605,9 +619,9 @@ public class PrettyPrinter
     {
        socialite.Absyn.GoalAssign _goalassign = (socialite.Absyn.GoalAssign) foo;
        if (_i_ > 0) render(_L_PAREN);
-       pp(_goalassign.variable_, 0);
-       render("=");
        pp(_goalassign.exp_, 0);
+       render("=");
+       pp(_goalassign.variable_, 0);
        if (_i_ > 0) render(_R_PAREN);
     }
   }
@@ -631,7 +645,9 @@ public class PrettyPrinter
     {
        socialite.Absyn.ValueInt _valueint = (socialite.Absyn.ValueInt) foo;
        if (_i_ > 0) render(_L_PAREN);
+       render("'");
        pp(_valueint.integer_, 0);
+       render("'");
        if (_i_ > 0) render(_R_PAREN);
     }
     else     if (foo instanceof socialite.Absyn.ValueVar)
@@ -645,14 +661,18 @@ public class PrettyPrinter
     {
        socialite.Absyn.ValueDouble _valuedouble = (socialite.Absyn.ValueDouble) foo;
        if (_i_ > 0) render(_L_PAREN);
+       render("'");
        pp(_valuedouble.double_, 0);
+       render("'");
        if (_i_ > 0) render(_R_PAREN);
     }
     else     if (foo instanceof socialite.Absyn.ValueConst)
     {
        socialite.Absyn.ValueConst _valueconst = (socialite.Absyn.ValueConst) foo;
        if (_i_ > 0) render(_L_PAREN);
+       render("'");
        pp(_valueconst.uident_, 0);
+       render("'");
        if (_i_ > 0) render(_R_PAREN);
     }
   }
@@ -676,6 +696,7 @@ public class PrettyPrinter
     {
        socialite.Absyn.Var _var = (socialite.Absyn.Var) foo;
        if (_i_ > 0) render(_L_PAREN);
+       render("?");
        pp(_var.lident_, 0);
        if (_i_ > 0) render(_R_PAREN);
     }
