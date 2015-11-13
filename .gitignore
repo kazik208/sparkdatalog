@@ -2,8 +2,9 @@
 parsergen/socialite
 parsergen/Makefile
 */JLex
-*.bak
 *.aux
+*.bak
+*.class
 *.dvi
 *.log
 *.ps
