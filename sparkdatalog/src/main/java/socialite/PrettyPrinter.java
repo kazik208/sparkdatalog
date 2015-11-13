@@ -80,6 +80,7 @@ public class PrettyPrinter
     trim();
     String temp = buf_.toString();
     buf_.delete(0,buf_.length());
+    temp += "\n?-Q(?x).";
     return temp;
   }
   public static String show(socialite.Absyn.Program foo)
@@ -645,9 +646,7 @@ public class PrettyPrinter
     {
        socialite.Absyn.ValueInt _valueint = (socialite.Absyn.ValueInt) foo;
        if (_i_ > 0) render(_L_PAREN);
-       render("'");
        pp(_valueint.integer_, 0);
-       render("'");
        if (_i_ > 0) render(_R_PAREN);
     }
     else     if (foo instanceof socialite.Absyn.ValueVar)
@@ -661,9 +660,7 @@ public class PrettyPrinter
     {
        socialite.Absyn.ValueDouble _valuedouble = (socialite.Absyn.ValueDouble) foo;
        if (_i_ > 0) render(_L_PAREN);
-       render("'");
        pp(_valuedouble.double_, 0);
-       render("'");
        if (_i_ > 0) render(_R_PAREN);
     }
     else     if (foo instanceof socialite.Absyn.ValueConst)
