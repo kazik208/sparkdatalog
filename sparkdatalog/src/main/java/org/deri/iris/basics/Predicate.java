@@ -85,6 +85,7 @@ public class Predicate implements IPredicate {
 	}
 
 	public String toString() {
-		return symbol;
+		char first = Character.toUpperCase(symbol.charAt(0));
+		return first + symbol.substring(1);
 	}
 }
