@@ -80,7 +80,7 @@ public class PrettyPrinter
     trim();
     String temp = buf_.toString();
     buf_.delete(0,buf_.length());
-    temp += "\n?-Q(?x).";
+    temp = temp.replace("Q (?x) :", "?");
     return temp;
   }
   public static String show(socialite.Absyn.Program foo)
