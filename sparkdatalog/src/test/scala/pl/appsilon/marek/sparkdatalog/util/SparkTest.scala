@@ -23,6 +23,7 @@ trait SparkTestUtils extends FunSuite {
   def sparkTest(name: String)(body: => Unit) {
     test(name, SparkTest){
       sc = new SparkContext("local", name)
+      sc.setCheckpointDir("checkpoint")
       try {
         body
       }

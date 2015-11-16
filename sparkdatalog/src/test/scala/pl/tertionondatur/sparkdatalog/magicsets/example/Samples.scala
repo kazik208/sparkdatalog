@@ -17,7 +17,7 @@ object Samples extends SparkTestUtils {
       """
         |Rsg(x,y) :- Flat(x,y).
         |Rsg(x,y):- Up(x,x1),Flat(y1,x1),Down(x1,y).
+        |Q(x) :- Rsg(13,x).
       """.stripMargin
-  //|Q(x) :- Rsg(13,x).
 
 }

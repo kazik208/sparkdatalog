@@ -3,6 +3,7 @@ package pl.tertionondatur.sparkdatalog.magicsets
 import org.deri.iris.api.IProgramOptimisation._
 import org.deri.iris.api.basics.IRule
 import scala.collection.JavaConversions._
+import pl.appsilon.marek.sparkdatalog.Relation
 
 object OptimizationResultFactory {
 
@@ -13,11 +14,11 @@ object OptimizationResultFactory {
     new OptimizationResult(sparkDatalogFacts, sparkDatalogRules, optimizationResult.query.toString)
   }
 
-  def toFact(rule: IRule): Fact = {
+  def toFact(rule: IRule): DatalogFact = {
     val atom = rule.getHead.get(0).getAtom
     val symbol = atom.getPredicate.getPredicateSymbol
     val variables = atom.getTuple.iterator().toSeq.map(_.toString.toInt)
-    new Fact(symbol, variables)
+    new DatalogFact(symbol, variables)
   }
 
   def toQuery(rule: IRule): String = {

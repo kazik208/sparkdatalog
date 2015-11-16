@@ -9,7 +9,7 @@ import socialite.{Yylex, parser}
 
 object Parser {
 
-  private def parse(lexer: Yylex): Program = try {
+  def parse(lexer: Yylex): Program = try {
     val parser = new parser(lexer)
     parser.pProgram()
   } catch {
