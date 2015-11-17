@@ -1,11 +1,11 @@
 package pl.tertionondatur.sparkdatalog.magicsets.example
 
+import org.apache.spark.SparkContext
 import pl.appsilon.marek.sparkdatalog.{Relation, Database}
-import pl.appsilon.marek.sparkdatalog.util.SparkTestUtils
 
-object Samples extends SparkTestUtils {
+object Samples {
 
-  def database: Database = {
+  def database(sc: SparkContext): Database = {
     val ups = sc.parallelize(Seq((1, 5), (1, 6), (6,13), (7,14), (8,14), (9,15), (10,15)))
     val flats = sc.parallelize(Seq((7, 6), (13,14),(13,15),(16,13)))
     val downs = sc.parallelize(Seq((12,6),(13,6),(7,2),(8,3),(9,4)))
