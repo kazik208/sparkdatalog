@@ -16,7 +16,7 @@ object Samples {
   def program: String =
       """
         |Rsg(x,y) :- Flat(x,y).
-        |Rsg(x,y):- Up(x,x1),Flat(y1,x1),Down(x1,y).
+        |Rsg(x,y):- Up(x,x1),Rsg(y1,x1),Down(y1,y).
         |Q(x) :- Rsg(13,x).
       """.stripMargin
 

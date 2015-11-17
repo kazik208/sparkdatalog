@@ -16,7 +16,7 @@ class MagicSetsExample extends SparkTestUtils with Matchers {
     val newdb = Samples.database(sc).include(Relation.unary(fact1.symbol, sc.parallelize(fact1.variables)))
     val optres = optimizationResult.rules.mkString("\n") + "\n" + optimizationResult.query
     val result = newdb.datalog(optres)
-    result.collect() should contain ("Rsg" -> Set(Seq(13, 14), Seq(13, 15)))
+    result.collect() should contain ("Q" -> Set(Seq(14), Seq(15)))
   }
 
 }
