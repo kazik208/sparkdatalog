@@ -22,9 +22,9 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.concrete.IUnsignedByte;
-
 import java.net.URI;
+
+import org.deri.iris.api.terms.concrete.IUnsignedByte;
 
 /**
  * <p>

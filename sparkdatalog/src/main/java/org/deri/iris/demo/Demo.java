@@ -22,6 +22,9 @@
  */
 package org.deri.iris.demo;
 
+import java.io.FileReader;
+import java.io.IOException;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.KnowledgeBaseFactory;
 import org.deri.iris.evaluation.stratifiedbottomup.StratifiedBottomUpEvaluationStrategyFactory;
@@ -32,9 +35,6 @@ import org.deri.iris.optimisations.magicsets.MagicSets;
 import org.deri.iris.optimisations.rulefilter.RuleFilter;
 import org.deri.iris.rules.safety.AugmentingRuleSafetyProcessor;
 import org.deri.iris.rules.safety.StandardRuleSafetyProcessor;
-
-import java.io.FileReader;
-import java.io.IOException;
 
 /**
  * A command line demonstrator for IRIS.
@@ -121,17 +121,7 @@ public class Demo
 	 */
 	public static void main( String[] args )
 	{
-		String up = "up('a','e').\nup('a','f').\nup('f','m').\nup('g','n').\nup('h','n').\nup('i','o').\nup('j','o').\n";
-		String flat = "flat('g','f').\nflat('m','n').\nflat('m','o').\n";
-		String down = "down('l','f').\ndown('m','f').\ndown('g','b').\ndown('h','c').\ndown('i','d').\n";
-		String rules = "rsg(?x,?y):-flat(?x,?y).\nrsg(?x,?y):-up(?x,?x1),flat(?y1,?x1),down(?y1,?y).\n";
-		String query = "?-rsg(?x,'f').";
-//		String up = "up('a','e').\nup('a','f').\nup('f','m').\nup('g','n').\nup('h','n').\n";
-//		String flat = "flat('g','f').\nflat('m','n').\nflat('m','o').\n";
-//		String down = "down('l','f').\ndown('m','f').\ndown('g','b').\ndown('h','c').\ndown('i','d').\n";
-//		String rules = "rsg(?x,?y):-flat(?x,?y).\nrsg(?x,?y):-up(?x,?x1),flat(?x1,?y1),down(?y1,?y).\n";
-//		String query = "?-rsg('a',?x).";
-		String program = up + flat  + down + rules + query;
+		String program = null;
 		
 		Configuration configuration = KnowledgeBaseFactory.getDefaultConfiguration();
 		

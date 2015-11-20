@@ -22,14 +22,22 @@
  */
 package org.deri.iris.rules.ordering;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.deri.iris.api.basics.IAtom;
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.rules.IRuleReOrderingOptimiser;
 import org.deri.iris.rules.RuleHeadEquality;
-
-import java.util.*;
 
 /**
  * Very naive proof of concept, but speeds up a few unit tests by a factor of 10.

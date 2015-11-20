@@ -22,16 +22,16 @@
  */
 package org.deri.iris.rules.stratification;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.rules.IRuleStratifier;
 import org.deri.iris.rules.RuleHeadEquality;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * The global stratification algorithm.

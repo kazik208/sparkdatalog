@@ -22,6 +22,8 @@
  */
 package org.deri.iris.api;
 
+import java.util.List;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.ProgramNotStratifiedException;
 import org.deri.iris.RuleUnsafeException;
@@ -29,8 +31,6 @@ import org.deri.iris.api.basics.IQuery;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
 
 /**
  * The interface of a knowledge-base as seen by a user of IRIS.
@@ -45,7 +45,7 @@ public interface IKnowledgeBase
 	 * @throws RuleUnsafeException If the program (knowledge-base) contains an unsafe rule.
 	 * @throws EvaluationException If the execution of a query fails for any other reason.
 	 */
-	IRelation execute(IQuery query) throws ProgramNotStratifiedException, RuleUnsafeException, EvaluationException;
+	IRelation execute( IQuery query ) throws ProgramNotStratifiedException, RuleUnsafeException, EvaluationException;
 
 	/**
 	 * Evaluate a query and optionally return the variable bindings.
@@ -58,7 +58,7 @@ public interface IKnowledgeBase
 	 * @throws RuleUnsafeException If the program (knowledge-base) contains an unsafe rule.
 	 * @throws EvaluationException If the execution of a query fails for any other reason.
 	 */
-	IRelation execute(IQuery query, List<IVariable> variableBindings) throws ProgramNotStratifiedException, RuleUnsafeException, EvaluationException;
+	IRelation execute( IQuery query, List<IVariable> variableBindings ) throws ProgramNotStratifiedException, RuleUnsafeException, EvaluationException;
 	
 	/**
 	 * Get the rules hidden within the knowledge-base.

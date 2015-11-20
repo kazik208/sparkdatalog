@@ -22,6 +22,8 @@
  */
 package org.deri.iris.builtins.string;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.IStringTerm;
@@ -29,8 +31,6 @@ import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.builtins.FunctionalBuiltin;
 import org.deri.iris.builtins.datatype.ToStringBuiltin;
 import org.deri.iris.factory.Factory;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * Represents the RIF built-in func:concat as defined in http://www.w3.org/2005

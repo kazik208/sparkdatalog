@@ -22,15 +22,15 @@
  */
 package org.deri.iris.rules.compiler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.storage.IIndex;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A compiled rule element representing a negated ordinary literal.

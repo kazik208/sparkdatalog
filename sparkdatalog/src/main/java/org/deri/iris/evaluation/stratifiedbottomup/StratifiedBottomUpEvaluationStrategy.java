@@ -22,6 +22,9 @@
  */
 package org.deri.iris.evaluation.stratifiedbottomup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IQuery;
@@ -37,9 +40,6 @@ import org.deri.iris.rules.compiler.RuleCompiler;
 import org.deri.iris.rules.safety.AugmentingRuleSafetyProcessor;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A strategy that uses bottom up evaluation on a stratified rule set.

@@ -22,6 +22,8 @@
  */
 package org.deri.iris.evaluation.topdown.sldnf;
 
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.ProgramNotStratifiedException;
@@ -32,8 +34,6 @@ import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.evaluation.IEvaluationStrategy;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
 
 /**
  * Implementation of the SLDNF evaluation strategy.

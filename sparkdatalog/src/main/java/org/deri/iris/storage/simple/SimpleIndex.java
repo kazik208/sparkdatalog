@@ -22,14 +22,20 @@
  */
 package org.deri.iris.storage.simple;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.storage.IIndex;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
 import org.deri.iris.utils.equivalence.IgnoreTermEquivalence;
-
-import java.util.*;
 
 /**
  * A simple, in-memory, hash-based index.

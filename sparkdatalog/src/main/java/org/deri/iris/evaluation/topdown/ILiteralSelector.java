@@ -22,9 +22,9 @@
  */
 package org.deri.iris.evaluation.topdown;
 
-import org.deri.iris.api.basics.ILiteral;
-
 import java.util.List;
+
+import org.deri.iris.api.basics.ILiteral;
 
 /**
  * Selects a literal from a list of literals
@@ -33,6 +33,6 @@ import java.util.List;
  */
 public interface ILiteralSelector {
 
-	public ILiteral select(List<ILiteral> list);
+	public ILiteral select( List<ILiteral> list );
 	
 }

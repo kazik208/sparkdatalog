@@ -22,11 +22,11 @@
  */
 package org.deri.iris.rules;
 
+import java.util.List;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.facts.IFacts;
-
-import java.util.List;
 
 /**
  * An interface for rule head equality pre-processors.

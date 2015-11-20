@@ -22,16 +22,16 @@
  */
 package org.deri.iris.builtins.string;
 
-import org.deri.iris.api.basics.IPredicate;
-import org.deri.iris.api.terms.IStringTerm;
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.builtins.BooleanBuiltin;
+import static org.deri.iris.factory.Factory.BASIC;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.deri.iris.factory.Factory.BASIC;
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.terms.IStringTerm;
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.builtins.BooleanBuiltin;
 
 /**
  * Represents the RIF built-in func:matches as described in

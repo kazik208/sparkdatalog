@@ -22,19 +22,19 @@
  */
 package org.deri.iris.performance;
 
-import org.deri.iris.EvaluationException;
-import org.deri.iris.KnowledgeBaseFactory;
-import org.deri.iris.api.IKnowledgeBase;
-import org.deri.iris.api.basics.IQuery;
-import org.deri.iris.compiler.Parser;
-import org.deri.iris.compiler.ParserException;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.deri.iris.EvaluationException;
+import org.deri.iris.KnowledgeBaseFactory;
+import org.deri.iris.api.IKnowledgeBase;
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.compiler.Parser;
+import org.deri.iris.compiler.ParserException;
 
 /**
  * <pre>

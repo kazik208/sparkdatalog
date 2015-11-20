@@ -22,11 +22,11 @@
  */
 package org.deri.iris.graph;
 
+import java.util.Collection;
+
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.api.factory.IGraphFactory;
 import org.deri.iris.api.graph.IPredicateGraph;
-
-import java.util.Collection;
 
 /**
  * <p>

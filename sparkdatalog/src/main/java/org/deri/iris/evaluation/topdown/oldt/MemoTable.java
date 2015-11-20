@@ -23,6 +23,9 @@
 
 package org.deri.iris.evaluation.topdown.oldt;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.deri.iris.api.basics.IAtom;
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.ITerm;
@@ -30,9 +33,6 @@ import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.storage.simple.SimpleRelationFactory;
 import org.deri.iris.utils.TermMatchingAndSubstitution;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 

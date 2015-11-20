@@ -22,13 +22,13 @@
  */
 package org.deri.iris.evaluation.topdown;
 
+import java.util.List;
+import java.util.Set;
+
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.builtins.IBuiltinAtom;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.builtins.EqualBuiltin;
-
-import java.util.List;
-import java.util.Set;
 
 /**
  * Safe Standard Literal Selector. 

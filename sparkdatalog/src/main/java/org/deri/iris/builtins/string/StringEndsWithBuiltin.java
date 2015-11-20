@@ -22,13 +22,13 @@
  */
 package org.deri.iris.builtins.string;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.IStringTerm;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.builtins.BooleanBuiltin;
 import org.deri.iris.terms.StringTerm;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * Represents the RIF built-in func:ends-with as described in

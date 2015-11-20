@@ -22,18 +22,20 @@
  */
 package org.deri.iris.demo;
 
-import org.deri.iris.Configuration;
-import org.deri.iris.KnowledgeBaseFactory;
-import org.deri.iris.api.IKnowledgeBase;
-import org.deri.iris.api.basics.*;
-import org.deri.iris.api.terms.IVariable;
-import org.deri.iris.compiler.Parser;
-import org.deri.iris.storage.IRelation;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.deri.iris.Configuration;
+import org.deri.iris.KnowledgeBaseFactory;
+import org.deri.iris.api.IKnowledgeBase;
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.api.basics.IRule;
+import org.deri.iris.api.basics.ITuple;
+import org.deri.iris.api.terms.IVariable;
+import org.deri.iris.compiler.Parser;
+import org.deri.iris.storage.IRelation;
 
 /**
  * Helper for the demo applications.
@@ -69,7 +71,7 @@ public class ProgramExecutor
 			parser.parse( program );
 			Map<IPredicate,IRelation> facts = parser.getFacts();
 			List<IRule> rules = parser.getRules();
-
+			
 			StringBuilder output = new StringBuilder();
 			
 			long duration = -System.currentTimeMillis();

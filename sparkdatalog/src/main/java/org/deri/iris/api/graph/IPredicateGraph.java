@@ -22,13 +22,13 @@
  */
 package org.deri.iris.api.graph;
 
-import org.deri.iris.api.basics.IPredicate;
-import org.deri.iris.api.basics.IRule;
-import org.deri.iris.graph.LabeledEdge;
-
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Set;
+
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IRule;
+import org.deri.iris.graph.LabeledEdge;
 
 /**
  * <p>

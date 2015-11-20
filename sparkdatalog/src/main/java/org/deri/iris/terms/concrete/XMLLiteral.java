@@ -22,10 +22,10 @@
  */
 package org.deri.iris.terms.concrete;
 
+import java.net.URI;
+
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IXMLLiteral;
-
-import java.net.URI;
 
 /**
  * Implementation of the rdf:XMLLiteral data-type.

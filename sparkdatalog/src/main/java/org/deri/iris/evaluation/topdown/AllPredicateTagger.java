@@ -22,12 +22,12 @@
  */
 package org.deri.iris.evaluation.topdown;
 
-import org.deri.iris.api.basics.IPredicate;
-import org.deri.iris.api.basics.IRule;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IRule;
 
 public class AllPredicateTagger implements IPredicateTagger {
 

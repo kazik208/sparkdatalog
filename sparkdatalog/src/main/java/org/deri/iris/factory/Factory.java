@@ -22,7 +22,11 @@
  */
 package org.deri.iris.factory;
 
-import org.deri.iris.api.factory.*;
+import org.deri.iris.api.factory.IBasicFactory;
+import org.deri.iris.api.factory.IBuiltinsFactory;
+import org.deri.iris.api.factory.IConcreteFactory;
+import org.deri.iris.api.factory.IGraphFactory;
+import org.deri.iris.api.factory.ITermFactory;
 import org.deri.iris.basics.BasicFactory;
 import org.deri.iris.builtins.BuiltinsFactory;
 import org.deri.iris.graph.GraphFactory;

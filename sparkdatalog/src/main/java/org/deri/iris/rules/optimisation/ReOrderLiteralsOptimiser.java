@@ -22,14 +22,18 @@
  */
 package org.deri.iris.rules.optimisation;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.api.builtins.IBuiltinAtom;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.factory.Factory;
 import org.deri.iris.rules.IRuleOptimiser;
-
-import java.util.*;
 
 /**
  * Re-order literals.

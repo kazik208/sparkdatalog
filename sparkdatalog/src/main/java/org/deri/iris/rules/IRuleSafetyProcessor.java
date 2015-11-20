@@ -35,5 +35,5 @@ public interface IRuleSafetyProcessor
 	 * @param rule The rule to process.
 	 * @return The processed rule.
 	 */
-	IRule process(IRule rule) throws RuleUnsafeException;
+	IRule process( IRule rule ) throws RuleUnsafeException;
 }

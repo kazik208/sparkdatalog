@@ -22,16 +22,16 @@
  */
 package org.deri.iris.rules.compiler;
 
-import org.deri.iris.api.basics.ITuple;
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.utils.equivalence.IEquivalentTerms;
+import static org.deri.iris.factory.Factory.BASIC;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-import static org.deri.iris.factory.Factory.BASIC;
+import org.deri.iris.api.basics.ITuple;
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.utils.equivalence.IEquivalentTerms;
 
 /**
  * Utilities for classes in this package.

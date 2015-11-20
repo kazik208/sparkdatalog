@@ -22,6 +22,11 @@
  */
 package org.deri.iris.utils;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.deri.iris.api.basics.IAtom;
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.IConstructedTerm;
@@ -30,11 +35,6 @@ import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.factory.Factory;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
 import org.deri.iris.utils.equivalence.IgnoreTermEquivalence;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * A collection of utility methods for term/tuple matching and variable substitution.

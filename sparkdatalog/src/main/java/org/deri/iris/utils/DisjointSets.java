@@ -22,7 +22,11 @@
  */
 package org.deri.iris.utils;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * <p>
@@ -40,8 +44,8 @@ import java.util.*;
  * 
  * @author Uwe Keller
  * @author Adrian Marte
- * @see Object#equals(Object)
- * @see Object#hashCode(Object)
+ * @see java.lang.Object#equals(java.lang.Object)
+ * @see java.lang.Object#hashCode(java.lang.Object)
  * @see <a
  *      href="http://en.wikipedia.org/wiki/Disjoint-set_data_structure">Wikipedia
  *      article about Disjoint-set data structure</a>

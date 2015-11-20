@@ -22,11 +22,12 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.concrete.IDayTimeDuration;
+import java.net.URI;
 
 import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.Duration;
-import java.net.URI;
+
+import org.deri.iris.api.terms.concrete.IDayTimeDuration;
 
 /*
  * W3C specification: http://www.w3.org/TR/xpath-functions/#dt-dayTimeDuration

@@ -22,14 +22,14 @@
  */
 package org.deri.iris.builtins.string;
 
+import static org.deri.iris.factory.Factory.BASIC;
+import static org.deri.iris.factory.Factory.TERM;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IPlainLiteral;
 import org.deri.iris.builtins.FunctionalBuiltin;
-
-import static org.deri.iris.factory.Factory.BASIC;
-import static org.deri.iris.factory.Factory.TERM;
 
 /**
  * Represents the RIF built-in function func:lang-from-PlainLiteral.

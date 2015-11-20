@@ -22,10 +22,10 @@
  */
 package org.deri.iris.rules;
 
-import org.deri.iris.api.basics.IRule;
-
 import java.util.Collection;
 import java.util.List;
+
+import org.deri.iris.api.basics.IRule;
 
 /**
  * Represents all classes that can optimise the order of rule evaluation.
@@ -41,5 +41,5 @@ public interface IRuleReOrderingOptimiser
 	 * @param rules The rules to re-order.
 	 * @return The same rules, but in a more efficient order for evaluation.
 	 */
-	List<IRule> reOrder(Collection<IRule> rules);
+	List<IRule> reOrder( Collection<IRule> rules );
 }

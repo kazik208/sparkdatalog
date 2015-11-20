@@ -22,12 +22,12 @@
  */
 package org.deri.iris.evaluation.stratifiedbottomup;
 
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.rules.compiler.ICompiledRule;
-
-import java.util.List;
 
 /**
  * Interface for compiled rule evaluators.
@@ -41,5 +41,5 @@ public interface IRuleEvaluator
 	 * @param configuration The knowledge-base configuration object.
 	 * @throws EvaluationException 
 	 */
-	void evaluateRules(List<ICompiledRule> rules, IFacts facts, Configuration configuration) throws EvaluationException;
+	void evaluateRules( List<ICompiledRule> rules, IFacts facts, Configuration configuration ) throws EvaluationException;
 }

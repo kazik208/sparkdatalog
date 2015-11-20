@@ -22,12 +22,16 @@
  */
 package org.deri.iris.terms.concrete;
 
-import javax.xml.datatype.*;
-import javax.xml.datatype.Duration;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeConstants;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.Duration;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * IRIS duration objects are implemented using the javax.xml.datatype.Duration class.
@@ -118,9 +122,9 @@ public class XmlDurationWorkAroundHelper
 			return true;
 
 		// Else normalise in case we are running with java 1.5 runtime
-		Duration n1 = normaliseDays( d1 );
-		Duration n2 = normaliseDays( d2 );
-
+		javax.xml.datatype.Duration n1 = normaliseDays( d1 );
+		javax.xml.datatype.Duration n2 = normaliseDays( d2 );
+		
 		if( n1.getSign() != n2.getSign() )
 			return false;
 		if( n1.getDays() != n2.getDays() )
@@ -129,15 +133,15 @@ public class XmlDurationWorkAroundHelper
 			return false;
 		if( n1.getMinutes() != n2.getMinutes() )
 			return false;
-
+		
 		BigDecimal s1 = (BigDecimal) n1.getField( DatatypeConstants.SECONDS );
 		BigDecimal s2 = (BigDecimal) n2.getField( DatatypeConstants.SECONDS );
 		if( ! equals( s1, s2 ) )
 			return false;
-
+		
 		return true;
 	}
-
+	
 	/**
 	 * Special compare method that gets around the problem in java 1.5,
 	 * where years and months are converted to days after arithmetic.
@@ -152,28 +156,28 @@ public class XmlDurationWorkAroundHelper
 
 		if (d1 == null)
 			return -1;
-
+		
 		if (d2 == null)
 			return 1;
 
 		boolean b1 = d1.getSign() >= 0;
 		boolean b2 = d2.getSign() >= 0;
-
+		
 		if( ! b1 && b2 )
 			return -1;
-
+		
 		if( b1 && ! b2 )
 			return 1;
 
 		// Now normalise in case we are running with java 1.5 runtime
-		Duration n1 = normaliseDays( d1 );
-		Duration n2 = normaliseDays( d2 );
+		javax.xml.datatype.Duration n1 = normaliseDays( d1 );
+		javax.xml.datatype.Duration n2 = normaliseDays( d2 );
 
 		if( n1.getDays() < n2.getDays() )
 			return -1;
 		if( n1.getDays() > n2.getDays() )
 			return 1;
-
+		
 		if( n1.getHours() < n2.getHours() )
 			return -1;
 		if( n1.getHours() > n2.getHours() )
@@ -186,50 +190,50 @@ public class XmlDurationWorkAroundHelper
 
 		BigDecimal s1 = (BigDecimal) n1.getField( DatatypeConstants.SECONDS );
 		BigDecimal s2 = (BigDecimal) n2.getField( DatatypeConstants.SECONDS );
-
+		
 		return s1.compareTo( s2 );
 	}
-
+	
 	public static int computeHashCode( Duration duration )
 	{
 		Duration normalised = normaliseSeconds( normaliseDays( duration ) );
 		return normalised.hashCode();
 	}
-
+	
 	public static BigDecimal getSeconds( XMLGregorianCalendar x )
 	{
 		BigDecimal fractional = x.getFractionalSecond();
 		if( fractional == null )
 			fractional = BigDecimal.ZERO;
-
+		
 		BigDecimal whole = BigDecimal.valueOf( x.getSecond() );
-
+		
 		return whole.add( fractional );
 	}
 
 //	private static int[] forwardFields = { Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH, Calendar.HOUR_OF_DAY, Calendar.MINUTE, Calendar.SECOND, Calendar.MILLISECOND };
 	private static int[] reverseFields = { Calendar.MILLISECOND, Calendar.SECOND, Calendar.MINUTE, Calendar.HOUR_OF_DAY, Calendar.DAY_OF_MONTH, Calendar.MONTH, Calendar.YEAR };
-
+	
 	public static Duration subtract( XMLGregorianCalendar x1, XMLGregorianCalendar x2 )
 	{
 		boolean positive = x1.compare( x2 ) >= 0;
-
+		
 		if( ! positive )
 		{
 			XMLGregorianCalendar temp = x1;
 			x1 = x2;
 			x2 = temp;
 		}
-
+		
 		BigDecimal s1 = getSeconds( x1 );
 		BigDecimal s2 = getSeconds( x2 );
 		BigDecimal seconds = s1.subtract( s2 );
 		if( seconds.compareTo( BigDecimal.ZERO ) < 0 )
 			seconds = seconds.add( BigDecimal.valueOf( 60 ) );
-
+		
 		GregorianCalendar g1 = x1.toGregorianCalendar();
 		GregorianCalendar g2 = x2.toGregorianCalendar();
-
+		
 		int year = 0;
 		for( int f : reverseFields )
 		{
@@ -244,7 +248,7 @@ public class XmlDurationWorkAroundHelper
 				subtractField( g1, g2, f );
 			}
 		}
-
+		
 		return FACTORY.newDuration(
 						positive,
 						BigInteger.valueOf( year ),
@@ -258,14 +262,14 @@ public class XmlDurationWorkAroundHelper
 	protected static String toString( GregorianCalendar g1 )
 	{
 		StringBuilder buffer = new StringBuilder();
-
+		
 		buffer.append( g1.get( Calendar.YEAR ) + "/" + (g1.get( Calendar.MONTH ) + 1) + "/" + g1.get( Calendar.DAY_OF_MONTH ) );
 		buffer.append( "  " );
 		buffer.append( g1.get( Calendar.HOUR_OF_DAY ) + ":" + g1.get( Calendar.MINUTE ) + ":" + g1.get( Calendar.SECOND )+ "." + g1.get( Calendar.MILLISECOND ) );
-
+		
 		return buffer.toString();
 	}
-
+	
 	private static void subtractField( GregorianCalendar g1, GregorianCalendar g2, int field )
 	{
 //		int value1 = g1.get( field );
@@ -275,7 +279,7 @@ public class XmlDurationWorkAroundHelper
 			value2 -= 1;
 		g1.add( field, -value2 );
 	}
-
+	
 	/**
 	 * Test for mathematical equality of two BigDecimal objects
 	 * (not representation equality).
@@ -286,12 +290,12 @@ public class XmlDurationWorkAroundHelper
 	private static boolean equals( BigDecimal f1, BigDecimal f2 )
 	{
 		BigDecimal[] args = new BigDecimal[] { f1, f2 };
-
+		
 		matchScale( args );
-
+		
 		return args[ 0 ].equals( args[ 1 ] );
 	}
-
+	
 	/**
 	 * Helper to set the scale of two BigDecimal objects to be the same
 	 * and equal to the higher of the two.
@@ -304,7 +308,7 @@ public class XmlDurationWorkAroundHelper
 	    else if (val[1].scale() < val[0].scale())
 	    	val[1] = val[1].setScale(val[0].scale());
 	}
-
+	
 	/**
 	 * Return just the fractional part of the seconds component of a duration object,
 	 * i.e. 1:2:34.45 => 0.45
@@ -314,10 +318,10 @@ public class XmlDurationWorkAroundHelper
 	private static BigDecimal fractionalSeconds( Duration duration )
 	{
 		BigDecimal seconds = (BigDecimal) duration.getField( DatatypeConstants.SECONDS );
-
+		
 		return seconds.subtract( new BigDecimal( seconds.toBigInteger() ) );
 	}
-
+	
 	/**
 	 * Create a new Duration object without any fractional second component.
 	 * @param duration The duration object to strip
@@ -331,9 +335,9 @@ public class XmlDurationWorkAroundHelper
 		int hour   = duration.getHours();
 		int minute = duration.getMinutes();
 		int second = duration.getSeconds();
-
+		
 		boolean positive = duration.getSign() >= 0;
-
+		
 		return FACTORY.newDuration(
 						positive,
 						year,
@@ -343,7 +347,7 @@ public class XmlDurationWorkAroundHelper
 						minute,
 						second );
 	}
-
+	
 	/**
 	 * Add two positive Duration objects.
 	 * @param d1 The first Duration.
@@ -355,20 +359,20 @@ public class XmlDurationWorkAroundHelper
 		BigDecimal s1 = fractionalSeconds( d1 );
 		BigDecimal s2 = fractionalSeconds( d2 );
 		BigDecimal extraSeconds = s1.add( s2 );
-
+		
 		Duration strip1 = stripFractionalSeconds( d1 );
 		Duration strip2 = stripFractionalSeconds( d2 );
-
+		
 		Duration stripResult = strip1.add( strip2 );
-
+		
 		if( extraSeconds.compareTo( BigDecimal.ONE ) >= 0 )
 		{
 			stripResult = stripResult.add( DURATION_1_SECOND );
 			extraSeconds = extraSeconds.subtract( BigDecimal.ONE );
 		}
-
+		
 		BigDecimal properSeconds = BigDecimal.valueOf( stripResult.getSeconds() ).add( extraSeconds );
-
+		
 		return FACTORY.newDuration( true,
 						BigInteger.valueOf( stripResult.getYears() ),
 						BigInteger.valueOf( stripResult.getMonths() ),
@@ -389,20 +393,20 @@ public class XmlDurationWorkAroundHelper
 		BigDecimal s1 = fractionalSeconds( d1 );
 		BigDecimal s2 = fractionalSeconds( d2 );
 		BigDecimal extraSeconds = s1.subtract( s2 );
-
+		
 		Duration strip1 = stripFractionalSeconds( d1 );
 		Duration strip2 = stripFractionalSeconds( d2 );
-
+		
 		Duration stripResult = strip1.subtract( strip2 );
-
+		
 		if( extraSeconds.compareTo( BigDecimal.ZERO ) < 0 )
 		{
 			stripResult = stripResult.subtract( DURATION_1_SECOND );
 			extraSeconds = extraSeconds.add( BigDecimal.ONE );
 		}
-
+		
 		BigDecimal properSeconds = BigDecimal.valueOf( stripResult.getSeconds() ).add( extraSeconds );
-
+		
 		return FACTORY.newDuration( true,
 						BigInteger.valueOf( stripResult.getYears() ),
 						BigInteger.valueOf( stripResult.getMonths() ),
@@ -410,7 +414,7 @@ public class XmlDurationWorkAroundHelper
 						BigInteger.valueOf( stripResult.getHours() ),
 						BigInteger.valueOf( stripResult.getMinutes() ),
 						properSeconds );
-	}
+	}	
 
 	/**
 	 * Java runtime 1.5 is inconsistent with its handling of days in Duration objects.
@@ -418,7 +422,7 @@ public class XmlDurationWorkAroundHelper
 	 * @return A day-normalised duration, i.e. all years and months converted to days,
 	 * e.g. 1Y 3M 3D => 458 days
 	 */
-	private static Duration normaliseDays( Duration duration )
+	private static javax.xml.datatype.Duration normaliseDays( javax.xml.datatype.Duration duration )
 	{
 		final long DAYS_PER_MONTH = 30;
 		final long DAYS_PER_YEAR = 365;
@@ -426,21 +430,21 @@ public class XmlDurationWorkAroundHelper
 		BigInteger days   = (BigInteger) duration.getField( DatatypeConstants.DAYS );
 		BigInteger months = (BigInteger) duration.getField( DatatypeConstants.MONTHS );
 		BigInteger years  = (BigInteger) duration.getField( DatatypeConstants.YEARS );
-
+		
 		BigInteger normalisedDays = years.multiply( BigInteger.valueOf( DAYS_PER_YEAR ) );
 		normalisedDays = normalisedDays.add( months.multiply( BigInteger.valueOf( DAYS_PER_MONTH ) ) );
 		normalisedDays = normalisedDays.add( days );
-
+		
 		BigInteger hours   = (BigInteger) duration.getField( DatatypeConstants.HOURS );
 		BigInteger minutes = (BigInteger) duration.getField( DatatypeConstants.MINUTES );
 		BigDecimal seconds = (BigDecimal) duration.getField( DatatypeConstants.SECONDS );
-
+		
 		boolean positive = duration.getSign() >= 0;
-
+		
 		return FACTORY.newDuration( positive, BigInteger.ZERO, BigInteger.ZERO, normalisedDays, hours, minutes, seconds );
 	}
 
-	private static Duration normaliseSeconds( Duration duration )
+	private static javax.xml.datatype.Duration normaliseSeconds( javax.xml.datatype.Duration duration )
 	{
 		BigInteger years  = (BigInteger) duration.getField( DatatypeConstants.YEARS );
 		BigInteger months = (BigInteger) duration.getField( DatatypeConstants.MONTHS );

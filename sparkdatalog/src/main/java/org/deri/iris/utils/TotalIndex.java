@@ -22,11 +22,11 @@
  */
 package org.deri.iris.utils;
 
-import org.deri.iris.api.basics.ITuple;
-import org.deri.iris.storage.IRelation;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import org.deri.iris.api.basics.ITuple;
+import org.deri.iris.storage.IRelation;
 
 /**
  * Helper class for the semi-naive evaluator.

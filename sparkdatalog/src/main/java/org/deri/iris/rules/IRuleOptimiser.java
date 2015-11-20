@@ -34,5 +34,5 @@ public interface IRuleOptimiser
 	 * @param rule The rule to optimise.
 	 * @return The optimised rule.
 	 */
-	IRule optimise(IRule rule);
+	IRule optimise( IRule rule );
 }

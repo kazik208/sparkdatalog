@@ -22,6 +22,19 @@
  */
 package org.deri.iris.builtins;
 
+import static org.deri.iris.factory.Factory.CONCRETE;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
+
+import javax.xml.datatype.DatatypeConstants;
+import javax.xml.datatype.Duration;
+import javax.xml.datatype.XMLGregorianCalendar;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.ConfigurationThreadLocalStorage;
 import org.deri.iris.EvaluationException;
@@ -29,7 +42,16 @@ import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.IConcreteTerm;
 import org.deri.iris.api.terms.INumericTerm;
 import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.api.terms.concrete.*;
+import org.deri.iris.api.terms.concrete.IDateTerm;
+import org.deri.iris.api.terms.concrete.IDateTime;
+import org.deri.iris.api.terms.concrete.IDayTimeDuration;
+import org.deri.iris.api.terms.concrete.IDecimalTerm;
+import org.deri.iris.api.terms.concrete.IDoubleTerm;
+import org.deri.iris.api.terms.concrete.IDuration;
+import org.deri.iris.api.terms.concrete.IFloatTerm;
+import org.deri.iris.api.terms.concrete.IIntegerTerm;
+import org.deri.iris.api.terms.concrete.ITime;
+import org.deri.iris.api.terms.concrete.IYearMonthDuration;
 import org.deri.iris.builtins.datatype.ToDayTimeDurationBuiltin;
 import org.deri.iris.builtins.datatype.ToDoubleBuiltin;
 import org.deri.iris.builtins.datatype.ToFloatBuiltin;
@@ -37,14 +59,6 @@ import org.deri.iris.builtins.datatype.ToYearMonthDurationBuiltin;
 import org.deri.iris.factory.Factory;
 import org.deri.iris.terms.concrete.XmlDurationWorkAroundHelper;
 import org.deri.iris.utils.StandardFloatingPointComparator;
-
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.Duration;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.math.BigDecimal;
-import java.util.*;
-
-import static org.deri.iris.factory.Factory.CONCRETE;
 
 /**
  * <p>
@@ -62,7 +76,7 @@ public class BuiltinHelper {
 
 	/**
 	 * Calendar with all fields set to 0. Used to get the milliseconds out of a
-	 * {@link Duration} object.
+	 * {@link javax.xml.datatype.Duration} object.
 	 */
 	private static final Calendar ZERO;
 

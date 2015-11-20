@@ -36,7 +36,7 @@ public interface IFloatingPointComparator
 	 * @param b A double value
 	 * @return -1 if a is significantly less than b, +1 if a is significantly greater than b, 0 if a and b are close enough.
 	 */
-	int compare(double a, double b);
+	int compare( double a, double b );
 
 	/**
 	 * Floating-point error safe comparison.
@@ -45,7 +45,7 @@ public interface IFloatingPointComparator
 	 * @param b A double value
 	 * @return true If a is less than b.
 	 */
-	boolean less(double a, double b);
+	boolean less( double a, double b );
 
 	/**
 	 * Floating-point error safe comparison.
@@ -54,7 +54,7 @@ public interface IFloatingPointComparator
 	 * @param b A double value
 	 * @return true If a is greater than b.
 	 */
-	boolean greater(double a, double b);
+	boolean greater( double a, double b );
 
 	/**
 	 * Floating-point error safe comparison.
@@ -63,7 +63,7 @@ public interface IFloatingPointComparator
 	 * @param b A double value
 	 * @return true If a is greater than or close enough to be equal to b.
 	 */
-	boolean greaterOrEquals(double a, double b);
+	boolean greaterOrEquals( double a, double b );
 
 	/**
 	 * Floating-point error safe comparison.
@@ -72,7 +72,7 @@ public interface IFloatingPointComparator
 	 * @param b A double value
 	 * @return true If a is less than or close enough to be equal to b.
 	 */
-	boolean lessOrEquals(double a, double b);
+	boolean lessOrEquals( double a, double b );
 
 	/**
 	 * Test two double values for equality.
@@ -80,7 +80,7 @@ public interface IFloatingPointComparator
 	 * @param b A double value
 	 * @return true If a and b are considered equal.
 	 */
-	boolean equals(double a, double b);
+	boolean equals( double a, double b );
 
 	/**
 	 * Floating-point error safe comparison.
@@ -89,7 +89,7 @@ public interface IFloatingPointComparator
 	 * @param b
 	 * @return true If a and b are significantly different.
 	 */
-	boolean notEquals(double a, double b);
+	boolean notEquals( double a, double b );
 
 	/**
 	 * Indicates whether a double value contains an integer or a number very,
@@ -97,5 +97,5 @@ public interface IFloatingPointComparator
 	 * @param value The value to test
 	 * @return true If value holds an integer.
 	 */
-	boolean isIntValue(double value);
+	boolean isIntValue( double value );
 }

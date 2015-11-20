@@ -22,6 +22,8 @@
  */
 package org.deri.iris.evaluation.topdown.oldt;
 
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.ProgramNotStratifiedException;
@@ -33,8 +35,6 @@ import org.deri.iris.evaluation.IEvaluationStrategy;
 import org.deri.iris.evaluation.topdown.ITopDownEvaluator;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
 
 public class OLDTEvaluationStrategy implements IEvaluationStrategy {
 

@@ -22,11 +22,11 @@
  */
 package org.deri.iris.utils.equivalence;
 
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.utils.DisjointSets;
-
 import java.util.Collections;
 import java.util.Set;
+
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.utils.DisjointSets;
 
 /**
  * An utility class to define equivalence between terms. Uses the disjoint-set

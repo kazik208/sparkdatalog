@@ -22,10 +22,15 @@
  */
 package org.deri.iris.api.factory;
 
-import org.deri.iris.api.basics.*;
-import org.deri.iris.api.terms.ITerm;
-
 import java.util.List;
+
+import org.deri.iris.api.basics.IAtom;
+import org.deri.iris.api.basics.ILiteral;
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.api.basics.IRule;
+import org.deri.iris.api.basics.ITuple;
+import org.deri.iris.api.terms.ITerm;
 
 /**
  * <p>
@@ -56,7 +61,7 @@ public interface IBasicFactory {
 
 	public ILiteral createLiteral(boolean isPositive, IAtom atom);
 	public ILiteral createLiteral(boolean isPositive, IPredicate predicate,
-								  ITuple tuple);
+			ITuple tuple);
 
 	/**
 	 * Creates a deep copy of a literal. The terms themsemves will remain 

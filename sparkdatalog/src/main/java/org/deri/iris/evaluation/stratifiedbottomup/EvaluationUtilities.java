@@ -22,15 +22,15 @@
  */
 package org.deri.iris.evaluation.stratifiedbottomup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.ProgramNotStratifiedException;
 import org.deri.iris.RuleUnsafeException;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.rules.IRuleOptimiser;
 import org.deri.iris.rules.IRuleStratifier;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A collection of useful evaluation steps.

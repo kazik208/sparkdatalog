@@ -22,9 +22,9 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.concrete.IShortTerm;
-
 import java.net.URI;
+
+import org.deri.iris.api.terms.concrete.IShortTerm;
 
 /**
  * <p>

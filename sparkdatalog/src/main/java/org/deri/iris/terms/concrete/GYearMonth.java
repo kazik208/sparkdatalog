@@ -22,14 +22,15 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.api.terms.concrete.IGYearMonth;
+import java.net.URI;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.net.URI;
+
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.api.terms.concrete.IGYearMonth;
 
 /**
  * <p>

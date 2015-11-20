@@ -22,9 +22,9 @@
  */
 package org.deri.iris.evaluation.topdown;
 
-import org.deri.iris.api.basics.IPredicate;
-
 import java.util.Set;
+
+import org.deri.iris.api.basics.IPredicate;
 
 /**
  * Used by OLDT evaluation to tag predicates as so-called 'memo predicates'

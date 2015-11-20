@@ -22,9 +22,18 @@
  */
 package org.deri.iris.rules.compiler;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
-import org.deri.iris.api.basics.*;
+import org.deri.iris.api.basics.IAtom;
+import org.deri.iris.api.basics.ILiteral;
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.api.basics.IRule;
+import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.builtins.IBuiltinAtom;
 import org.deri.iris.api.terms.IConstructedTerm;
 import org.deri.iris.api.terms.ITerm;
@@ -34,10 +43,6 @@ import org.deri.iris.rules.RuleHeadEquality;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
 import org.deri.iris.utils.equivalence.IgnoreTermEquivalence;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 /**
  * A rule compiler for creating objects that compute new facts using

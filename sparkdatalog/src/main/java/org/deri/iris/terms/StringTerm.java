@@ -22,10 +22,10 @@
  */
 package org.deri.iris.terms;
 
+import java.net.URI;
+
 import org.deri.iris.api.terms.IStringTerm;
 import org.deri.iris.api.terms.ITerm;
-
-import java.net.URI;
 
 /**
  * <p>

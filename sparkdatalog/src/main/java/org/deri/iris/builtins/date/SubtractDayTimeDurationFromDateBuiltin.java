@@ -22,13 +22,13 @@
  */
 package org.deri.iris.builtins.date;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IDateTerm;
 import org.deri.iris.api.terms.concrete.IDayTimeDuration;
 import org.deri.iris.builtins.SubtractBuiltin;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * <p>

@@ -22,15 +22,15 @@
  */
 package org.deri.iris.builtins.datatype;
 
+import static org.deri.iris.factory.Factory.BASIC;
+import static org.deri.iris.factory.Factory.CONCRETE;
+
+import java.util.TimeZone;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IDateTerm;
 import org.deri.iris.api.terms.concrete.IDateTime;
-
-import java.util.TimeZone;
-
-import static org.deri.iris.factory.Factory.BASIC;
-import static org.deri.iris.factory.Factory.CONCRETE;
 
 /**
  * Represents a data type conversion function, which converts supported data

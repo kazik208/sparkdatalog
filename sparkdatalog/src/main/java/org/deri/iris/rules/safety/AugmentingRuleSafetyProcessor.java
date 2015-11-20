@@ -22,6 +22,9 @@
  */
 package org.deri.iris.rules.safety;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.RuleUnsafeException;
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IRule;
@@ -30,9 +33,6 @@ import org.deri.iris.factory.Factory;
 import org.deri.iris.facts.FiniteUniverseFacts;
 import org.deri.iris.rules.IRuleSafetyProcessor;
 import org.deri.iris.rules.RuleValidator;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Uses the trick of augmenting rules to artificially limit variables.

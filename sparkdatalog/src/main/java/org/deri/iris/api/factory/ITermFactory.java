@@ -22,12 +22,12 @@
  */
 package org.deri.iris.api.factory;
 
+import java.util.Collection;
+
 import org.deri.iris.api.terms.IConstructedTerm;
 import org.deri.iris.api.terms.IStringTerm;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.IVariable;
-
-import java.util.Collection;
 
 /**
  * <p>
@@ -41,7 +41,7 @@ import java.util.Collection;
 public interface ITermFactory {
 
 	public IConstructedTerm createConstruct(final String name,
-											Collection<ITerm> terms);
+			Collection<ITerm> terms);
 	public IConstructedTerm createConstruct(final String name, ITerm... terms);
 
 	public IStringTerm createString(String arg);

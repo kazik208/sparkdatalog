@@ -22,13 +22,13 @@
  */
 package org.deri.iris;
 
+import java.util.List;
+import java.util.Map;
+
 import org.deri.iris.api.IKnowledgeBase;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * The factory for creating a knowledge-base.

@@ -22,7 +22,18 @@
  */
 package org.deri.iris.rules;
 
-import org.deri.iris.api.basics.*;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.deri.iris.api.basics.IAtom;
+import org.deri.iris.api.basics.ILiteral;
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.api.basics.IRule;
+import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.builtins.IBuiltinAtom;
 import org.deri.iris.api.terms.IConstructedTerm;
 import org.deri.iris.api.terms.ITerm;
@@ -33,12 +44,6 @@ import org.deri.iris.builtins.ExactEqualBuiltin;
 import org.deri.iris.builtins.NotEqualBuiltin;
 import org.deri.iris.builtins.NotExactEqualBuiltin;
 import org.deri.iris.factory.Factory;
-
-import java.lang.reflect.Constructor;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * A collection of useful rule manipulation operations.

@@ -22,12 +22,12 @@
  */
 package org.deri.iris.builtins.string;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IXMLLiteral;
 import org.deri.iris.builtins.EqualBuiltin;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * <p>

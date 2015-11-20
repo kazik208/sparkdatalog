@@ -22,12 +22,17 @@
  */
 package org.deri.iris.basics;
 
-import org.deri.iris.api.basics.*;
-import org.deri.iris.api.factory.IBasicFactory;
-import org.deri.iris.api.terms.ITerm;
-
 import java.util.Arrays;
 import java.util.List;
+
+import org.deri.iris.api.basics.IAtom;
+import org.deri.iris.api.basics.ILiteral;
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.api.basics.IRule;
+import org.deri.iris.api.basics.ITuple;
+import org.deri.iris.api.factory.IBasicFactory;
+import org.deri.iris.api.terms.ITerm;
 
 /**
  * <p>

@@ -22,6 +22,9 @@
  */
 package org.deri.iris.rules.compiler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IPredicate;
@@ -30,9 +33,6 @@ import org.deri.iris.factory.Factory;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.storage.simple.SimpleRelationFactory;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A compiled rule.

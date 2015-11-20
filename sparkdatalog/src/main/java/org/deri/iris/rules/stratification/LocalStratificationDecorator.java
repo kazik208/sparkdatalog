@@ -22,13 +22,13 @@
  */
 package org.deri.iris.rules.stratification;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.IVariable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A rule adaptor that decorates a rule with adornments for local stratification.

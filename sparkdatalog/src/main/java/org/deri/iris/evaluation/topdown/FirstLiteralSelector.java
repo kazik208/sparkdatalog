@@ -22,9 +22,9 @@
  */
 package org.deri.iris.evaluation.topdown;
 
-import org.deri.iris.api.basics.ILiteral;
-
 import java.util.List;
+
+import org.deri.iris.api.basics.ILiteral;
 
 /**
  * Safe Standard Literal Selector. 

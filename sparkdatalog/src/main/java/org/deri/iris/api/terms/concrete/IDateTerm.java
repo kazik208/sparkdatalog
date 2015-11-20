@@ -22,10 +22,11 @@
  */
 package org.deri.iris.api.terms.concrete;
 
-import org.deri.iris.api.terms.IConcreteTerm;
+import java.util.TimeZone;
 
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.util.TimeZone;
+
+import org.deri.iris.api.terms.IConcreteTerm;
 
 /**
  * <p>

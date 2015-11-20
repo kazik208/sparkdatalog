@@ -22,6 +22,10 @@
  */
 package org.deri.iris.rules.stratification;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.deri.iris.api.basics.IAtom;
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IRule;
@@ -33,17 +37,20 @@ import org.deri.iris.api.terms.concrete.IDoubleTerm;
 import org.deri.iris.api.terms.concrete.IFloatTerm;
 import org.deri.iris.api.terms.concrete.IIntegerTerm;
 import org.deri.iris.basics.Tuple;
-import org.deri.iris.builtins.*;
+import org.deri.iris.builtins.EqualBuiltin;
+import org.deri.iris.builtins.ExactEqualBuiltin;
+import org.deri.iris.builtins.GreaterBuiltin;
+import org.deri.iris.builtins.GreaterEqualBuiltin;
+import org.deri.iris.builtins.LessBuiltin;
+import org.deri.iris.builtins.LessEqualBuiltin;
+import org.deri.iris.builtins.NotEqualBuiltin;
+import org.deri.iris.builtins.NotExactEqualBuiltin;
 import org.deri.iris.factory.Factory;
 import org.deri.iris.rules.IRuleStratifier;
 import org.deri.iris.rules.RuleManipulator;
 import org.deri.iris.rules.stratification.LocalStratificationDecorator.Adornment;
 import org.deri.iris.rules.stratification.LocalStratificationDecorator.MatchType;
 import org.deri.iris.utils.StandardFloatingPointComparator;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 /**
  * A local stratification algorithm.

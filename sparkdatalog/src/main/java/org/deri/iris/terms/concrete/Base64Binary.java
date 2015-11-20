@@ -22,11 +22,11 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.api.terms.concrete.IBase64Binary;
-
 import java.net.URI;
 import java.util.regex.Pattern;
+
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.api.terms.concrete.IBase64Binary;
 
 /**
  * <p>

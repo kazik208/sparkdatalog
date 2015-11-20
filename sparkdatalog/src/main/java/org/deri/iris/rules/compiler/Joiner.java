@@ -22,6 +22,9 @@
  */
 package org.deri.iris.rules.compiler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.ITerm;
@@ -33,9 +36,6 @@ import org.deri.iris.storage.IIndexFactory;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.storage.IRelationFactory;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A compiled rule element representing a join from previous literals to this

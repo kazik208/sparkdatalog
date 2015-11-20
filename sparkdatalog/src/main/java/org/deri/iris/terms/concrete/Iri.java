@@ -22,11 +22,11 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.api.terms.concrete.IIri;
-
 import java.net.URI;
 import java.net.URISyntaxException;
+
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.api.terms.concrete.IIri;
 
 /**
  * <p>

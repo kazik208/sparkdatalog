@@ -22,6 +22,9 @@
  */
 package org.deri.iris.facts;
 
+import java.util.Collection;
+import java.util.Set;
+
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.basics.IRule;
@@ -32,9 +35,6 @@ import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.factory.Factory;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.storage.simple.SimpleRelationFactory;
-
-import java.util.Collection;
-import java.util.Set;
 
 /**
  * Definition: Unsafe negation

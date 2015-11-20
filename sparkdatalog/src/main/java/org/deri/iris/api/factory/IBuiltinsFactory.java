@@ -56,7 +56,7 @@ public interface IBuiltinsFactory {
 	 * @throws NullPointerException if any of the terms is <code>null</code>
 	 */
 	public IBuiltinAtom createAddBuiltin(final ITerm t0, final ITerm t1,
-										 final ITerm t2);
+			final ITerm t2);
 
 	/**
 	 * Creates a subtract builtin.
@@ -68,7 +68,7 @@ public interface IBuiltinsFactory {
 	 * @throws NullPointerException if one of the terms is <code>null</code>
 	 */
 	public IBuiltinAtom createSubtractBuiltin(final ITerm t0, final ITerm t1,
-											  final ITerm t2);
+			final ITerm t2);
 
 	/**
 	 * Creates a multiply builtin.
@@ -80,7 +80,7 @@ public interface IBuiltinsFactory {
 	 * @throws NullPointerException if one of the terms is <code>null</code>
 	 */
 	public IBuiltinAtom createMultiplyBuiltin(final ITerm t0, final ITerm t1,
-											  final ITerm t2);
+			final ITerm t2);
 
 	/**
 	 * Creates a divide builtin.
@@ -92,7 +92,7 @@ public interface IBuiltinsFactory {
 	 * @throws NullPointerException if one of the terms is <code>null</code>
 	 */
 	public IBuiltinAtom createDivideBuiltin(final ITerm t0, final ITerm t1,
-											final ITerm t2);
+			final ITerm t2);
 
 	/**
 	 * Creates a modulus builtin.
@@ -104,7 +104,7 @@ public interface IBuiltinsFactory {
 	 * @throws NullPointerException if one of the terms is <code>null</code>
 	 */
 	public IBuiltinAtom createModulusBuiltin(final ITerm t0, final ITerm t1,
-											 final ITerm t2);
+			final ITerm t2);
 
 	/**
 	 * Creates an equal builtin.

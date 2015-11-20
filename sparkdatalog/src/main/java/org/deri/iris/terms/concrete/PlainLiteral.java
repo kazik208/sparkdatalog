@@ -22,10 +22,10 @@
  */
 package org.deri.iris.terms.concrete;
 
+import java.net.URI;
+
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IPlainLiteral;
-
-import java.net.URI;
 
 /**
  * A term representing a rdf:PlainLiteral, former known as rdf:text.

@@ -22,12 +22,12 @@
  */
 package org.deri.iris.builtins.date;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IYearMonthDuration;
 import org.deri.iris.builtins.LessBuiltin;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * <p>

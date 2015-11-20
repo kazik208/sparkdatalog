@@ -22,13 +22,13 @@
  */
 package org.deri.iris.rules.compiler;
 
+import java.util.List;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
 
 /**
  * Interface for a compiled rule.
@@ -49,7 +49,7 @@ public interface ICompiledRule
 	 * @return The result relation for this rule.
 	 * @throws EvaluationException 
 	 */
-	IRelation evaluateIteratively(IFacts deltas) throws EvaluationException;
+	IRelation evaluateIteratively( IFacts deltas ) throws EvaluationException;
 	
 	/**
 	 * If this compiled rule represents a rule, then return the head predicate.

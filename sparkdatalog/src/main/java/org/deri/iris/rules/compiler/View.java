@@ -22,6 +22,10 @@
  */
 package org.deri.iris.rules.compiler;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.IVariable;
@@ -30,10 +34,6 @@ import org.deri.iris.storage.IRelationFactory;
 import org.deri.iris.utils.TermMatchingAndSubstitution;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
 import org.deri.iris.utils.equivalence.IgnoreTermEquivalence;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * <p>

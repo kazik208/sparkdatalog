@@ -39,7 +39,7 @@ public interface IRelation
 	 * @return true, if it was added, false if a tuple already exists in the relation with
 	 * the same term values.
 	 */
-	boolean add(ITuple tuple);
+	boolean add( ITuple tuple );
 
 	/**
 	 * Add all tuples in relation 'relation' to this relation. 
@@ -47,7 +47,7 @@ public interface IRelation
 	 * @param relation The relation containing tuples to add.
 	 * @return true if any tuples were actually added.
 	 */
-	boolean addAll(IRelation relation);
+	boolean addAll( IRelation relation );
 	
 	/**
 	 * Get the current number of tuples in this relation.
@@ -60,7 +60,7 @@ public interface IRelation
 	 * @param index The index of the tuple in the relation, 0 <= index < size().
 	 * @return The tuple at the given index position.
 	 */
-	ITuple get(int index);
+	ITuple get( int index );
 	
-	boolean contains(ITuple tuple);
+	boolean contains( ITuple tuple );
 }

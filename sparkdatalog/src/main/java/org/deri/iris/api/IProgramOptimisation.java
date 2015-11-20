@@ -22,11 +22,11 @@
  */
 package org.deri.iris.api;
 
-import org.deri.iris.api.basics.IQuery;
-import org.deri.iris.api.basics.IRule;
-
 import java.util.Collection;
 import java.util.List;
+
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.api.basics.IRule;
 
 /**
  * <p>
@@ -39,7 +39,7 @@ public interface IProgramOptimisation {
 
 	/**
 	 * Applies the optimisation algorithm to a set of rules. A 
-	 * {@link IProgramOptimisation.Result Result} which
+	 * {@link IProgramOptimisation.Result Result} which 
 	 * contains the transformed rules and the adjusted query.  
 	 * @param rules the rules to transform 
 	 * @param query the query for which to transform the rules

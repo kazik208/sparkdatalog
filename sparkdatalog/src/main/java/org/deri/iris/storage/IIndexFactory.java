@@ -60,6 +60,6 @@ public interface IIndexFactory {
 	 * @return The new index instance.
 	 */
 	IIndex createIndex(IRelation relation, IEquivalentTerms equivalentTerms,
-					   int... indices);
+			int... indices);
 
 }

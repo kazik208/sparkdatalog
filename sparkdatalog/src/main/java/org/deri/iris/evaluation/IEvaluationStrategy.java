@@ -22,14 +22,14 @@
  */
 package org.deri.iris.evaluation;
 
+import java.util.List;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.ProgramNotStratifiedException;
 import org.deri.iris.RuleUnsafeException;
 import org.deri.iris.api.basics.IQuery;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
 
 /**
  * Interface for all evaluation strategy implementations.
@@ -47,5 +47,5 @@ public interface IEvaluationStrategy
 	 * @throws RuleUnsafeException If the program (knowledge-base) contains an unsafe rule.
 	 * @throws EvaluationException If the evaluation fails for any other reason.
 	 */
-	IRelation evaluateQuery(IQuery query, List<IVariable> outputVariables) throws ProgramNotStratifiedException, RuleUnsafeException, EvaluationException;
+	IRelation evaluateQuery( IQuery query, List<IVariable> outputVariables ) throws ProgramNotStratifiedException, RuleUnsafeException, EvaluationException;
 }

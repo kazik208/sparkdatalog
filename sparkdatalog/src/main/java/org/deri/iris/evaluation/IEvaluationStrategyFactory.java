@@ -22,12 +22,12 @@
  */
 package org.deri.iris.evaluation;
 
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.facts.IFacts;
-
-import java.util.List;
 
 /**
  * Interface of all evaluation strategy factories.
@@ -40,5 +40,5 @@ public interface IEvaluationStrategyFactory
 	 * @param rules The rule-set to be used for evaluation.
 	 * @return The new evaluator instance.
 	 */
-	IEvaluationStrategy createEvaluator(IFacts facts, List<IRule> rules, Configuration configuration) throws EvaluationException;
+	IEvaluationStrategy createEvaluator( IFacts facts, List<IRule> rules, Configuration configuration ) throws EvaluationException;
 }

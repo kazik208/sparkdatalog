@@ -22,11 +22,11 @@
  */
 package org.deri.iris.evaluation.topdown;
 
+import java.util.Map;
+
 import org.deri.iris.api.basics.IQuery;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.IVariable;
-
-import java.util.Map;
 
 /**
  * A query with an associated substitution form a branch/subgoal in

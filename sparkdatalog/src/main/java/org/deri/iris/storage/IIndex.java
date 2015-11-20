@@ -22,10 +22,10 @@
  */
 package org.deri.iris.storage;
 
+import java.util.List;
+
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.ITerm;
-
-import java.util.List;
 
 /**
  * Represents an index on something, usually a relation.
@@ -39,5 +39,5 @@ public interface IIndex
 	 * @return The list of matching tuples.
 	 * TODO This might change to returning Iterator<ITuple> to allow for very large data sets.
 	 */
-	List<ITuple> get(List<ITerm> key);
+	List<ITuple> get( List<ITerm> key );
 }

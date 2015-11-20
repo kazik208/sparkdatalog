@@ -22,14 +22,14 @@
  */
 package org.deri.iris.evaluation.topdown.sldnf;
 
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.evaluation.IEvaluationStrategy;
 import org.deri.iris.evaluation.IEvaluationStrategyFactory;
 import org.deri.iris.facts.IFacts;
-
-import java.util.List;
 
 /**
  * Factory for SLDNF evaluation strategy

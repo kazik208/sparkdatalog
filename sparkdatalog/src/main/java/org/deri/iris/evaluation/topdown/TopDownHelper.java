@@ -22,9 +22,22 @@
  */
 package org.deri.iris.evaluation.topdown;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.RuleUnsafeException;
-import org.deri.iris.api.basics.*;
+import org.deri.iris.api.basics.IAtom;
+import org.deri.iris.api.basics.ILiteral;
+import org.deri.iris.api.basics.IPredicate;
+import org.deri.iris.api.basics.IQuery;
+import org.deri.iris.api.basics.IRule;
+import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.builtins.IBuiltinAtom;
 import org.deri.iris.api.terms.IConstructedTerm;
 import org.deri.iris.api.terms.ITerm;
@@ -36,11 +49,6 @@ import org.deri.iris.factory.Factory;
 import org.deri.iris.rules.RuleManipulator;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.utils.TermMatchingAndSubstitution;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.*;
-import java.util.Map.Entry;
 
 /**
  * Collection of helper functions for top-down evaluation strategies
@@ -51,8 +59,6 @@ import java.util.Map.Entry;
 public class TopDownHelper {
 
 	private static RuleManipulator rm = new RuleManipulator();
-	
-	private static Logger logger = LoggerFactory.getLogger(TopDownHelper.class);
 	
 	/**
 	 * Replaces a rule head in a Query with the rule body.
@@ -497,15 +503,13 @@ public class TopDownHelper {
 	public static String getDebugPrefix(int recursionDepth, boolean inNegationAsFailureFlip) {
 		// Debug prefix for proper output
 		String debugPrefix = "";
-		
-		if (logger.isDebugEnabled()) {
+		if (System.getenv( OLDTEvaluator.IRIS_DEBUG_FLAG ) != null) {
 			for (int i = 0; i < recursionDepth; i++)
 				debugPrefix += "  ";
 			
 			if (inNegationAsFailureFlip)
 				debugPrefix += "{NAF} ";
 		}
-		
 		return debugPrefix;
 	}
 
@@ -515,7 +519,8 @@ public class TopDownHelper {
 
 	public static void printDebug(String msg, int recursionDepth, boolean inNegationAsFailureFlip) {
 		String debugPrefix = getDebugPrefix(recursionDepth, inNegationAsFailureFlip);
-		logger.debug(debugPrefix + msg);
+		if (System.getenv( OLDTEvaluator.IRIS_DEBUG_FLAG ) != null)
+			System.out.println(debugPrefix + msg);
 	}
 
 	/**

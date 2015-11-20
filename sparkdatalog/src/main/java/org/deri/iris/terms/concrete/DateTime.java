@@ -22,16 +22,17 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.api.terms.concrete.IDateTime;
-
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.net.URI;
 import java.util.TimeZone;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.api.terms.concrete.IDateTime;
 
 /**
  * <p>

@@ -22,9 +22,9 @@
  */
 package org.deri.iris.utils.equivalence;
 
-import org.deri.iris.api.terms.ITerm;
-
 import java.util.Set;
+
+import org.deri.iris.api.terms.ITerm;
 
 /**
  * Defines equivalence between terms.

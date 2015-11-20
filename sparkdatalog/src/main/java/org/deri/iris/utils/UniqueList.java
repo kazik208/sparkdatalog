@@ -22,7 +22,12 @@
  */
 package org.deri.iris.utils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Set;
 
 /**
  * Modified array list implementation that enforces uniqueness, but maintains ordering.

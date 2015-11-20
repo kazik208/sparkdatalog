@@ -22,12 +22,12 @@
  */
 package org.deri.iris.evaluation.topdown;
 
+import java.util.List;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IQuery;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
 
 /**
  * Interface for top-down evaluators

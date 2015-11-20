@@ -22,6 +22,9 @@
  */
 package org.deri.iris.evaluation;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.IProgramOptimisation;
@@ -31,8 +34,6 @@ import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.facts.OriginalFactsPreservingFacts;
 import org.deri.iris.storage.IRelation;
-
-import java.util.List;
 
 /**
  * An evaluation strategy adaptor that uses program optimisations. <br />

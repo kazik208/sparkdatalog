@@ -22,12 +22,12 @@
  */
 package org.deri.iris.rules;
 
+import java.util.List;
+
 import org.deri.iris.api.basics.IAtom;
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.builtins.EqualBuiltin;
-
-import java.util.List;
 
 /**
  * An utility class for rule head equality.

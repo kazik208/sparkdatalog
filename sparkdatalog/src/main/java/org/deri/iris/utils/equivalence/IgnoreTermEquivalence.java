@@ -22,10 +22,10 @@
  */
 package org.deri.iris.utils.equivalence;
 
-import org.deri.iris.api.terms.ITerm;
-
 import java.util.Collections;
 import java.util.Set;
+
+import org.deri.iris.api.terms.ITerm;
 
 /**
  * An ineffective term equivalence implementation, i.e. this term equivalence

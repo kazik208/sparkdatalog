@@ -22,12 +22,12 @@
  */
 package org.deri.iris.api.basics;
 
-import org.deri.iris.api.terms.ITerm;
-import org.deri.iris.api.terms.IVariable;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+
+import org.deri.iris.api.terms.ITerm;
+import org.deri.iris.api.terms.IVariable;
 
 /**
  * <p>

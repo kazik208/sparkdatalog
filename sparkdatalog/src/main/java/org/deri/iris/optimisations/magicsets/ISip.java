@@ -22,12 +22,12 @@
  */
 package org.deri.iris.optimisations.magicsets;
 
+import java.util.Comparator;
+import java.util.Set;
+
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.graph.LabeledEdge;
-
-import java.util.Comparator;
-import java.util.Set;
 
 /**
  * <p>

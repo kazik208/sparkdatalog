@@ -22,10 +22,10 @@
  */
 package org.deri.iris.builtins;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.ITerm;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * <p>

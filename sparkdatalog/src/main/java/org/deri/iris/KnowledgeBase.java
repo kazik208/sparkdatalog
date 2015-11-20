@@ -22,6 +22,11 @@
  */
 package org.deri.iris;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.deri.iris.api.IKnowledgeBase;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.basics.IQuery;
@@ -35,143 +40,143 @@ import org.deri.iris.facts.FactsWithExternalData;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.rules.RuleManipulator;
 import org.deri.iris.storage.IRelation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * The concrete knowledge-base.
  */
-public class KnowledgeBase implements IKnowledgeBase {
-	private Logger logger = LoggerFactory.getLogger(getClass());
-
+public class KnowledgeBase implements IKnowledgeBase
+{
 	/**
 	 * Constructor.
-	 * 
-	 * @param facts
-	 *            The starting facts for the knowledge-base.
-	 * @param rules
-	 *            The rules of the knowledge-base.
-	 * @param configuration
-	 *            The configuration object for the knowledge-base.
-	 * @throws EvaluationException
-	 * @throws EvaluationException
+	 * @param facts The starting facts for the knowledge-base.
+	 * @param rules The rules of the knowledge-base.
+	 * @param configuration The configuration object for the knowledge-base.
+	 * @throws EvaluationException 
+	 * @throws EvaluationException 
 	 */
-	public KnowledgeBase(Map<IPredicate, IRelation> inputFacts,
-			List<IRule> rules, Configuration configuration)
-			throws EvaluationException {
-		if (inputFacts == null)
-			inputFacts = new HashMap<IPredicate, IRelation>();
-
-		if (rules == null)
+	public KnowledgeBase( Map<IPredicate,IRelation> inputFacts, List<IRule> rules, Configuration configuration ) throws EvaluationException
+	{
+		if( inputFacts == null )
+			inputFacts = new HashMap<IPredicate,IRelation>();
+		
+		if( rules == null )
 			rules = new ArrayList<IRule>();
-
-		if (configuration == null)
+		
+		if( configuration == null )
 			configuration = new Configuration();
-
+		
 		mConfiguration = configuration;
-
+		
 		// Store the configuration object against the current thread.
-		ConfigurationThreadLocalStorage.setConfiguration(mConfiguration);
+		ConfigurationThreadLocalStorage.setConfiguration( mConfiguration );
 
 		// Set up the rule-base
 		mRules = rules;
-
+		
 		// Set up the facts object(s)
-		IFacts facts = new Facts(inputFacts, mConfiguration.relationFactory);
-
-		if (mConfiguration.externalDataSources.size() > 0)
-			facts = new FactsWithExternalData(facts,
-					mConfiguration.externalDataSources);
-
+		IFacts facts = new Facts( inputFacts, mConfiguration.relationFactory );
+		
+		if( mConfiguration.externalDataSources.size() > 0 )
+			facts = new FactsWithExternalData( facts, mConfiguration.externalDataSources );
+		
 		mFacts = facts;
-
-		if (logger.isDebugEnabled()) {
-			logger.debug("IRIS knowledge-base init");
-			logger.debug("========================");
-
-			for (IRule rule : rules) {
-				logger.debug(rule.toString());
-			}
-
-			logger.debug("------------------------");
-
+		
+		// Check if the debug environment variable is set.
+		DEBUG = System.getenv( IRIS_DEBUG_FLAG ) != null;
+		
+		if( DEBUG )
+		{
+			System.out.println( "IRIS knowledge-base init" );
+			System.out.println( "========================" );
+			for( IRule rule : rules )
+				System.out.println( rule );
+			System.out.println( "------------------------" );
 			for (IPredicate f : mFacts.getPredicates()) {
 				IRelation relation = mFacts.get(f);
 				for (int i = 0; i < relation.size(); i++) {
 					ITuple tuple = relation.get(i);
-					logger.debug(f + " " + tuple);
+					System.out.println(f + " " + tuple);
 				}
 			}
 		}
 
-		if (mConfiguration.programOptmimisers.size() > 0)
-			mEvaluationStrategy = new OptimisedProgramStrategyAdaptor(facts,
-					rules, mConfiguration);
+		if( mConfiguration.programOptmimisers.size() > 0 )
+			mEvaluationStrategy = new OptimisedProgramStrategyAdaptor( facts, rules, mConfiguration );
 		else
-			mEvaluationStrategy = mConfiguration.evaluationStrategyFactory
-					.createEvaluator(facts, rules, configuration);
+			mEvaluationStrategy = mConfiguration.evaluationStrategyFactory.createEvaluator( facts, rules, configuration );
 	}
-
-	public IRelation execute(IQuery query, List<IVariable> variableBindings)
-			throws EvaluationException {
-		if (query == null)
-			throw new IllegalArgumentException(
-					"KnowledgeBase.execute() - the query is null.");
-
+	
+	public IRelation execute( IQuery query, List<IVariable> variableBindings ) throws EvaluationException
+	{
+		if( query == null )
+			throw new IllegalArgumentException( "KnowledgeBase.execute() - the query is null." );
+		
 		// This prevents every strategy having to check for this.
-		if (variableBindings == null)
+		if( variableBindings == null )
 			variableBindings = new ArrayList<IVariable>();
-
+		
 		// Store the configuration object against the current thread.
-		ConfigurationThreadLocalStorage.setConfiguration(mConfiguration);
+		ConfigurationThreadLocalStorage.setConfiguration( mConfiguration );
 
-		logger.debug("IRIS query");
-		logger.debug("==========");
-		logger.debug(query.toString());
-
-		IRelation result = mEvaluationStrategy.evaluateQuery(RuleManipulator
-				.removeDuplicateLiterals(query), variableBindings);
-
-		logger.debug("------------");
-		logger.debug(result.toString());
-
+		
+		if( DEBUG )
+		{
+			System.out.println( "IRIS query" );
+			System.out.println( "==========" );
+			System.out.println( query );
+		}
+		
+		IRelation result = mEvaluationStrategy.evaluateQuery(
+				RuleManipulator.removeDuplicateLiterals(query),
+				variableBindings);
+		
+		if( DEBUG )
+		{
+			System.out.println( "------------" );
+			System.out.println( result );
+		}
+		
 		return result;
 	}
 
-	public IRelation execute(IQuery query) throws EvaluationException {
-		return execute(query, null);
-	}
-
-	public List<IRule> getRules() {
-		return mRules;
-	}
-
+	public IRelation execute( IQuery query ) throws EvaluationException
+    {
+		return execute( query, null );
+    }
+	
+	public List<IRule> getRules()
+    {
+	    return mRules;
+    }
+	
 	@Override
-	public String toString() {
+    public String toString()
+    {
 		StringBuilder result = new StringBuilder();
-
-		for (IRule rule : mRules)
-			result.append(rule.toString());
-
-		result.append(mFacts.toString());
-
-		return result.toString();
-	}
+		
+		for( IRule rule : mRules )
+			result.append( rule.toString() );
+		
+		result.append( mFacts.toString() );
+		
+	    return result.toString();
+    }
+	
+	/** Debug flag. */
+	private final boolean DEBUG;
+	
+	/** The debug environment variable. */
+	private static final String IRIS_DEBUG_FLAG = "IRIS_DEBUG";
 
 	/** The facts of the knowledge-base. */
 	private final IFacts mFacts;
 
 	/** The rules of the knowledge-base. */
 	private final List<IRule> mRules;
-
+	
 	/** The configuration object for the knowledge-base. */
 	private final Configuration mConfiguration;
-
+	
 	/** The evaluation strategy for the knowledge-base. */
 	private IEvaluationStrategy mEvaluationStrategy;
 }

@@ -22,12 +22,12 @@
  */
 package org.deri.iris.builtins.numeric;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.INumericTerm;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.builtins.NotEqualBuiltin;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * <p>

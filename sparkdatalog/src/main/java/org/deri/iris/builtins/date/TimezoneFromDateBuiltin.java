@@ -22,14 +22,14 @@
  */
 package org.deri.iris.builtins.date;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IDateTerm;
 import org.deri.iris.builtins.BuiltinHelper;
 import org.deri.iris.builtins.FunctionalBuiltin;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * Represents the RIF built-in function func:timezone-from-date.

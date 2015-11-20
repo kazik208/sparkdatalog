@@ -23,14 +23,14 @@
 
 package org.deri.iris.rules.compiler;
 
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.utils.equivalence.IEquivalentTerms;
-
-import java.util.List;
 
 /**
  * This rule element creates all possible combinations of an input relation

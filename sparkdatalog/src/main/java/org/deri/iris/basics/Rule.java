@@ -22,12 +22,12 @@
  */
 package org.deri.iris.basics;
 
-import org.deri.iris.api.basics.ILiteral;
-import org.deri.iris.api.basics.IRule;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.deri.iris.api.basics.ILiteral;
+import org.deri.iris.api.basics.IRule;
 
 /**
  * <p>

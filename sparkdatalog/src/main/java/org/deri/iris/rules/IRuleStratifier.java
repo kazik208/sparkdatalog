@@ -22,9 +22,9 @@
  */
 package org.deri.iris.rules;
 
-import org.deri.iris.api.basics.IRule;
-
 import java.util.List;
+
+import org.deri.iris.api.basics.IRule;
 
 /**
  * Interface to all rule stratifiers.
@@ -42,5 +42,5 @@ public interface IRuleStratifier
 	 * @return A set of stratified rules, or null if the rules can not be
 	 * stratified with this algorithm.
 	 */
-	List<List<IRule>> stratify(List<IRule> rules);
+	List<List<IRule>> stratify( List<IRule> rules );
 }

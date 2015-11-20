@@ -22,15 +22,15 @@
  */
 package org.deri.iris.builtins.datatype;
 
+import static org.deri.iris.factory.Factory.BASIC;
+
+import java.net.URI;
+
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.terms.IConcreteTerm;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.concrete.IIri;
 import org.deri.iris.builtins.BooleanBuiltin;
-
-import java.net.URI;
-
-import static org.deri.iris.factory.Factory.BASIC;
 
 /**
  * Represents the RIF built-in <code>isLiteralOfType</code> as defined in

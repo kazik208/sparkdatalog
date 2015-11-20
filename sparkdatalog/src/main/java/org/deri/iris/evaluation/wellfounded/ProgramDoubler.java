@@ -22,6 +22,9 @@
  */
 package org.deri.iris.evaluation.wellfounded;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IPredicate;
@@ -32,9 +35,6 @@ import org.deri.iris.facts.Facts;
 import org.deri.iris.facts.IFacts;
 import org.deri.iris.facts.OriginalFactsPreservingFacts;
 import org.deri.iris.storage.IRelationFactory;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Program doubler for well-founded semantics evaluation strategy.

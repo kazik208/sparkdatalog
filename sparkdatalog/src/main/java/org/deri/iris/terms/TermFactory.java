@@ -22,14 +22,14 @@
  */
 package org.deri.iris.terms;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.deri.iris.api.factory.ITermFactory;
 import org.deri.iris.api.terms.IConstructedTerm;
 import org.deri.iris.api.terms.IStringTerm;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.IVariable;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 /**
  * @author richi

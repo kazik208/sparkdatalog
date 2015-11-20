@@ -22,6 +22,14 @@
  */
 package org.deri.iris.rules;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.deri.iris.api.basics.IAtom;
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IRule;
@@ -32,8 +40,6 @@ import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.builtins.ArithmeticBuiltin;
 import org.deri.iris.builtins.EqualBuiltin;
 import org.deri.iris.utils.TermMatchingAndSubstitution;
-
-import java.util.*;
 
 /**
  * We use the definition of a safe rule as described by Ullman, page 105.

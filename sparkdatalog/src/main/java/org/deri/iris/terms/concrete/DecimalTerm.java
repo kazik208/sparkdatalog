@@ -22,10 +22,10 @@
  */
 package org.deri.iris.terms.concrete;
 
-import org.deri.iris.api.terms.concrete.IDecimalTerm;
-
 import java.math.BigDecimal;
 import java.net.URI;
+
+import org.deri.iris.api.terms.concrete.IDecimalTerm;
 
 /**
  * <p>

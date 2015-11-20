@@ -22,13 +22,13 @@
  */
 package org.deri.iris.rules.safety;
 
+import java.util.List;
+
 import org.deri.iris.RuleUnsafeException;
 import org.deri.iris.api.basics.IRule;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.rules.IRuleSafetyProcessor;
 import org.deri.iris.rules.RuleValidator;
-
-import java.util.List;
 
 /**
  * A standard rule-safety processor that checks if all variables are limited, a la Ullman.

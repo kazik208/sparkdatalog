@@ -22,9 +22,9 @@
  */
 package org.deri.iris.api.basics;
 
-import org.deri.iris.api.terms.IVariable;
-
 import java.util.List;
+
+import org.deri.iris.api.terms.IVariable;
 
 /**
  * A query is a rule without the head.

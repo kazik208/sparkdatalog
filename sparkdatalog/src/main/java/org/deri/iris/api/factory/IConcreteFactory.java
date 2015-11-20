@@ -22,11 +22,56 @@
  */
 package org.deri.iris.api.factory;
 
-import org.deri.iris.api.terms.concrete.*;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.net.URI;
+
+import org.deri.iris.api.terms.concrete.IAnyURI;
+import org.deri.iris.api.terms.concrete.IBase64Binary;
+import org.deri.iris.api.terms.concrete.IBooleanTerm;
+import org.deri.iris.api.terms.concrete.IByteTerm;
+import org.deri.iris.api.terms.concrete.IDateTerm;
+import org.deri.iris.api.terms.concrete.IDateTime;
+import org.deri.iris.api.terms.concrete.IDayTimeDuration;
+import org.deri.iris.api.terms.concrete.IDecimalTerm;
+import org.deri.iris.api.terms.concrete.IDoubleTerm;
+import org.deri.iris.api.terms.concrete.IDuration;
+import org.deri.iris.api.terms.concrete.IENTITY;
+import org.deri.iris.api.terms.concrete.IFloatTerm;
+import org.deri.iris.api.terms.concrete.IGDay;
+import org.deri.iris.api.terms.concrete.IGMonth;
+import org.deri.iris.api.terms.concrete.IGMonthDay;
+import org.deri.iris.api.terms.concrete.IGYear;
+import org.deri.iris.api.terms.concrete.IGYearMonth;
+import org.deri.iris.api.terms.concrete.IHexBinary;
+import org.deri.iris.api.terms.concrete.IID;
+import org.deri.iris.api.terms.concrete.IIDREF;
+import org.deri.iris.api.terms.concrete.IIntTerm;
+import org.deri.iris.api.terms.concrete.IIntegerTerm;
+import org.deri.iris.api.terms.concrete.IIri;
+import org.deri.iris.api.terms.concrete.ILanguage;
+import org.deri.iris.api.terms.concrete.ILongTerm;
+import org.deri.iris.api.terms.concrete.INCName;
+import org.deri.iris.api.terms.concrete.INMTOKEN;
+import org.deri.iris.api.terms.concrete.INOTATION;
+import org.deri.iris.api.terms.concrete.IName;
+import org.deri.iris.api.terms.concrete.INegativeInteger;
+import org.deri.iris.api.terms.concrete.INonNegativeInteger;
+import org.deri.iris.api.terms.concrete.INonPositiveInteger;
+import org.deri.iris.api.terms.concrete.INormalizedString;
+import org.deri.iris.api.terms.concrete.IPlainLiteral;
+import org.deri.iris.api.terms.concrete.IPositiveInteger;
+import org.deri.iris.api.terms.concrete.IQName;
+import org.deri.iris.api.terms.concrete.IShortTerm;
+import org.deri.iris.api.terms.concrete.ISqName;
+import org.deri.iris.api.terms.concrete.ITime;
+import org.deri.iris.api.terms.concrete.IToken;
+import org.deri.iris.api.terms.concrete.IUnsignedByte;
+import org.deri.iris.api.terms.concrete.IUnsignedInt;
+import org.deri.iris.api.terms.concrete.IUnsignedLong;
+import org.deri.iris.api.terms.concrete.IUnsignedShort;
+import org.deri.iris.api.terms.concrete.IXMLLiteral;
+import org.deri.iris.api.terms.concrete.IYearMonthDuration;
 
 /**
  * <p>
@@ -83,7 +128,7 @@ public interface IConcreteFactory {
 	 *             both positive, or negative
 	 */
 	public IDateTerm createDate(int year, int month, int day, int tzHour,
-								int tzMinute);
+			int tzMinute);
 
 	/**
 	 * Creates a datetime object with a given timezone.
@@ -100,7 +145,7 @@ public interface IConcreteFactory {
 	 *             both positive, or negative
 	 */
 	public IDateTime createDateTime(int year, int month, int day, int hour,
-									int minute, double second, int tzHour, int tzMinute);
+			int minute, double second, int tzHour, int tzMinute);
 
 	/**
 	 * Creates a datetime object with a given timezone.
@@ -118,7 +163,7 @@ public interface IConcreteFactory {
 	 *             both positive, or negative
 	 */
 	public IDateTime createDateTime(int year, int month, int day, int hour,
-									int minute, int second, int millisecond, int tzHour, int tzMinute);
+			int minute, int second, int millisecond, int tzHour, int tzMinute);
 
 	/**
 	 * Creates a dateTimeStamp term for the specified values.
@@ -135,7 +180,7 @@ public interface IConcreteFactory {
 	 *             positive or negative.
 	 */
 	public IDateTime createDateTimeStamp(int year, int month, int day,
-										 int hour, int minute, double second, int tzHour, int tzMinute);
+			int hour, int minute, double second, int tzHour, int tzMinute);
 
 	/**
 	 * Creates a new term representing a xs:dayTimeDuration.
@@ -149,7 +194,7 @@ public interface IConcreteFactory {
 	 * @return The new term representing a xs:dayTimeDuration.
 	 */
 	public IDayTimeDuration createDayTimeDuration(boolean positive, int day,
-												  int hour, int minute, double second);
+			int hour, int minute, double second);
 
 	/**
 	 * Creates a new term representing a xs:dayTimeDuration.
@@ -164,7 +209,7 @@ public interface IConcreteFactory {
 	 * @return The new term representing a xs:dayTimeDuration.
 	 */
 	public IDayTimeDuration createDayTimeDuration(boolean positive, int day,
-												  int hour, int minute, int second, int millisecond);
+			int hour, int minute, int second, int millisecond);
 
 	/**
 	 * Create a new decimal term.
@@ -203,7 +248,7 @@ public interface IConcreteFactory {
 	 * @return
 	 */
 	public IDuration createDuration(boolean positive, int year, int month,
-									int day, int hour, int minute, double second);
+			int day, int hour, int minute, double second);
 
 	/**
 	 * Constructs a new duration.
@@ -219,7 +264,7 @@ public interface IConcreteFactory {
 	 * @param millisecond the millisecondspan
 	 */
 	public IDuration createDuration(boolean positive, int year, int month,
-									int day, int hour, int minute, int second, int millisecond);
+			int day, int hour, int minute, int second, int millisecond);
 
 	/**
 	 * Constructs a new duration out of a given amount of milliseconds. The
@@ -364,7 +409,7 @@ public interface IConcreteFactory {
 	 *             both positive, or negative
 	 */
 	public ITime createTime(int hour, int minute, double second, int tzHour,
-							int tzMinute);
+			int tzMinute);
 
 	/**
 	 * Creates a time object with a given timezone.
@@ -379,7 +424,7 @@ public interface IConcreteFactory {
 	 *             both positive, or negative
 	 */
 	public ITime createTime(int hour, int minute, int second, int millisecond,
-							int tzHour, int tzMinute);
+			int tzHour, int tzMinute);
 
 	/**
 	 * Creates a new term representing a rdf:XMLLiteral.
@@ -408,7 +453,7 @@ public interface IConcreteFactory {
 	 * @return The new term representing a xs:yearMonthDuration.
 	 */
 	public IYearMonthDuration createYearMonthDuration(boolean positive,
-													  int year, int month);
+			int year, int month);
 
 	/**
 	 * Creates a new term representing a xs:anyURI.

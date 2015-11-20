@@ -22,13 +22,19 @@
  */
 package org.deri.iris.evaluation.topdown;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
+
 import org.deri.iris.api.basics.ILiteral;
 import org.deri.iris.api.basics.IPredicate;
 import org.deri.iris.api.basics.IQuery;
 import org.deri.iris.api.basics.IRule;
-
-import java.util.*;
-import java.util.Map.Entry;
 
 public class CommonPredicateTagger implements IPredicateTagger {
 	

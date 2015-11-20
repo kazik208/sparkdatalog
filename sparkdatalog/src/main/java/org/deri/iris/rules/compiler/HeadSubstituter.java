@@ -22,6 +22,8 @@
  */
 package org.deri.iris.rules.compiler;
 
+import java.util.List;
+
 import org.deri.iris.Configuration;
 import org.deri.iris.EvaluationException;
 import org.deri.iris.RuleUnsafeException;
@@ -29,8 +31,6 @@ import org.deri.iris.api.basics.ITuple;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.storage.IRelation;
 import org.deri.iris.utils.TermMatchingAndSubstitution;
-
-import java.util.List;
 
 /**
  * A compiled rule element representing the substitution of variable bindings in to the rule head.

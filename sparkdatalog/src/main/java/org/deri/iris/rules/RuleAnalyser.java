@@ -22,6 +22,9 @@
  */
 package org.deri.iris.rules;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.deri.iris.EvaluationException;
 import org.deri.iris.api.basics.IAtom;
 import org.deri.iris.api.basics.ILiteral;
@@ -34,9 +37,6 @@ import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.builtins.EqualBuiltin;
 import org.deri.iris.builtins.NotEqualBuiltin;
 import org.deri.iris.utils.TermMatchingAndSubstitution;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * <p>
