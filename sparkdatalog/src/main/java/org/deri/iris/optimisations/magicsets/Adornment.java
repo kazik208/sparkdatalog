@@ -31,7 +31,7 @@ package org.deri.iris.optimisations.magicsets;
 public enum Adornment {
 	BOUND("b"), FREE("f");
 	
-	private final String representation;
+	public final String representation;
 	
 	private Adornment(final String representation) {
 		this.representation = representation;
