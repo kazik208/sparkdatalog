@@ -46,7 +46,7 @@ public class Rule implements IRule {
 
 	private final List<ILiteral> body;
 	
-	Rule(final List<ILiteral> head, final List<ILiteral> body) {
+	public Rule(final List<ILiteral> head, final List<ILiteral> body) {
 		if (head == null) {
 			throw new IllegalArgumentException("The head must not be null");
 		}

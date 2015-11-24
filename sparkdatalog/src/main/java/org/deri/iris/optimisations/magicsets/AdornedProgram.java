@@ -33,15 +33,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.deri.iris.api.basics.IAtom;
-import org.deri.iris.api.basics.ILiteral;
-import org.deri.iris.api.basics.IPredicate;
-import org.deri.iris.api.basics.IQuery;
-import org.deri.iris.api.basics.IRule;
+import org.deri.iris.basics.Rule;
+import org.deri.iris.api.basics.*;
 import org.deri.iris.api.terms.IConstructedTerm;
 import org.deri.iris.api.terms.ITerm;
 import org.deri.iris.api.terms.IVariable;
 import org.deri.iris.rules.RuleAnalyser;
+import pl.tertionondatur.sparkdatalog.magicsets.RuleOptimizer$;
 
 /**
  * <p>
@@ -154,18 +152,20 @@ public class AdornedProgram {
 		} else { // handle non-conjunctive query
 			// adorn the original program
 			createAdornedRules(rules, query);
-
-			// construct the new query with the adorned predicate
-			final ILiteral queryLiteral = query.getLiterals().get(0);
-			final AdornedPredicate ap = new AdornedPredicate(queryLiteral);
-			newQuery = BASIC.createQuery(BASIC.createLiteral(
-						queryLiteral.isPositive(), 
-						BASIC.createAtom(ap, BASIC.createTuple(queryLiteral.getAtom().getTuple()))));
-
+			newQuery = constructQueryWithAdornedPredicate(query);
 		}
 
 		this.rules = new HashSet<IRule>(rules);
 		this.query = newQuery;
+	}
+
+	private static IQuery constructQueryWithAdornedPredicate(IQuery query) {
+		final ILiteral queryLiteral = query.getLiterals().get(0);
+		final AdornedPredicate adornedPredicate = new AdornedPredicate(queryLiteral);
+		final ITuple tuple = BASIC.createTuple(queryLiteral.getAtom().getTuple());
+		final IAtom atom = BASIC.createAtom(adornedPredicate, tuple);
+		final ILiteral literal = BASIC.createLiteral(queryLiteral.isPositive(), atom);
+		return BASIC.createQuery(literal);
 	}
 
 	/**
@@ -202,7 +202,7 @@ public class AdornedProgram {
 			final AdornedPredicate adornedPredicate = predicatesToProcess.iterator().next();
 			predicatesToProcess.remove(adornedPredicate);
 
-			for (final IRule rule : productiveRules) {
+			for (IRule rule : productiveRules) {
 				final ILiteral headlLiteral = rule.getHead().get(0);
 				final IPredicate headPredicate = headlLiteral.getAtom().getPredicate();
 
@@ -211,10 +211,12 @@ public class AdornedProgram {
 				if (adornedPredicate.hasSameSignature(headPredicate)) {
 					// creating a sip for the actual rule and the ap
 					final ISip sip = new LeftToRightSip(rule, createQueryForAP(adornedPredicate, headlLiteral));
+					List<ILiteral> optimizedBody = RuleOptimizer$.MODULE$.reorder(adornedPredicate, rule.getHead().get(0), rule.getBody());
+					rule = new Rule(rule.getHead(), optimizedBody);
 					AdornedRule adornedRule = (new AdornedRule(rule, sip)).replaceHeadLiteral(headlLiteral, adornedPredicate);
 
 					// iterating through all body literals of the rule
-					for (final ILiteral literal : rule.getBody()) {
+					for (final ILiteral literal : optimizedBody) {
 						final AdornedPredicate newAdornedPredicate = checkDerivedLiteral(literal, adornedRule);
 						if (newAdornedPredicate != null) {
 							// replacing the literal in the rule
