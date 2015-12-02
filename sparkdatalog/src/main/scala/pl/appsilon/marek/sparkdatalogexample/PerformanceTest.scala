@@ -21,7 +21,7 @@ trait PerformanceTest {
 
     val (masterUrl, rootDir, checkpointDir) =
       if (isLocalDebug) {
-        (master, "/home/marek/magisterka/sparkdatalog/sparkdatalog", "checkpoint")
+        (master, ".", "checkpoint")
       } else {
         val root = "hdfs://" + master + ":9000/input"
         ("spark://" + master + ":7077", root, root + "/checkpoint")

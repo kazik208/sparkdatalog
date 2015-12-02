@@ -29,4 +29,4 @@ libraryDependencies += "org.jgrapht" % "jgrapht-core" % "0.9.1"
 
 libraryDependencies += "org.deri.iris" % "iris-parser" % "0.61" from "http://www.iris-reasoner.org/snapshot/iris-parser-0.61.jar"
 
-mainClass in (Compile, run) := Some("pl.appsilon.marek.sparkdatalogexample.SparkDatalogExample")
+mainClass in (Compile, run) := Some("pl.appsilon.marek.sparkdatalogexample.PathsOrdinaryPerfTest")
