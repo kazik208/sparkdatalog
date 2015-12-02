@@ -31,10 +31,10 @@ object PathsOrdinaryPerfTest extends PerformanceTest
 
   override def runDatalog(): Unit = {
     val query = """
-		  | Path(x,y) :- Edge(x,y).
+		              | Path(x,y) :- Edge(x,y).
                   | Path(x,y) :- Edge(x,z), Path(z,y).
                   | Q(x) :- Path(214328887,x).
-		""".stripMargin
+		            """.stripMargin
     val resultDatabase = database.datalog(query)
 
     println(resultDatabase("Q").count())
