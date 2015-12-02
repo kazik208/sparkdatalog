@@ -4,7 +4,6 @@ import org.apache.spark.graphx.{Edge, Graph}
 import pl.appsilon.marek
 import pl.appsilon.marek.sparkdatalog.{Database, Relation}
 import pl.tertionondatur.sparkdatalog.magicsets.{DatalogFact, MagicSetsOptimizer}
-import pl.tertionondatur.sparkdatalog.magicsets.example.Samples
 
 object PathsMagicPerfTest extends PerformanceTest
 {
