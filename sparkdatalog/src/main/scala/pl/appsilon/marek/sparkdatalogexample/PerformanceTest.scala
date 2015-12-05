@@ -17,11 +17,13 @@ trait PerformanceTest {
   def main(args: Array[String]): Unit = {
     val master +: moreArgs = args.toList
 
-    val isLocalDebug: Boolean = master == "local" || master == "local[4]"
+
+
+    val isLocalDebug: Boolean = master.startsWith("local")
 
     val (masterUrl, rootDir, checkpointDir) =
       if (isLocalDebug) {
-        (master, ".", "checkpoint")
+        (master, ".", "/tmp/checkpoint")
       } else {
         val root = "hdfs://" + master + ":9000/input"
         ("spark://" + master + ":7077", root, root + "/checkpoint")
