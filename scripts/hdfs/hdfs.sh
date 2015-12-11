@@ -32,6 +32,13 @@ function copy {
 function print_usage {
       echo "Usage: $0 COMMNAD HADOOP_HOME [FILES_FOLDER]"
       echo "Where: COMMAND = start | stop | copy"
+      echo "Notes: - compatible with hadoop 2.2"
+      echo "       - assumes in HADOOP_HOME/etc/hadoop/
+                     exists core-site-template.xml
+                     with host set to ${HOSTNAME}
+                   - hadoop data dir is /tmp/data
+                   - hadoop name dir is /tmp/name
+                   - hadoop tmp dir is /tmp/tmp"
 }
 
 function check_args {
